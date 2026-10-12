@@ -1,0 +1,134 @@
+{
+  "SIS": [
+    {
+      "policy_id": "SIS_POLICY_1",
+      "rules_included": [
+        "SIS_01",
+        "SIS_02",
+        "SIS_03"
+      ],
+      "xacml_policy": "<Policy PolicyId='SIS_POLICY_1'>...XACML content including rules SIS_01, SIS_02, SIS_03...</Policy>"
+    },
+    {
+      "policy_id": "SIS_POLICY_2",
+      "rules_included": [
+        "SIS_04",
+        "SIS_05",
+        "SIS_06"
+      ],
+      "xacml_policy": "<Policy PolicyId='SIS_POLICY_2'>...XACML content including rules SIS_04, SIS_05, SIS_06...</Policy>"
+    },
+    {
+      "policy_id": "SIS_POLICY_3",
+      "rules_included": [
+        "SIS_07",
+        "SIS_08",
+        "SIS_09"
+      ],
+      "xacml_policy": "<Policy PolicyId='SIS_POLICY_3'>...XACML content including rules SIS_07, SIS_08, SIS_09...</Policy>"
+    },
+    {
+      "policy_id": "SIS_POLICY_4",
+      "rules_included": [
+        "SIS_10",
+        "SIS_11",
+        "SIS_12"
+      ],
+      "xacml_policy": "<Policy PolicyId='SIS_POLICY_4'>...XACML content including rules SIS_10, SIS_11, SIS_12...</Policy>"
+    },
+    {
+      "policy_id": "SIS_POLICY_5",
+      "rules_included": [
+        "SIS_13",
+        "SIS_14",
+        "SIS_15"
+      ],
+      "xacml_policy": "<Policy PolicyId='SIS_POLICY_5'>...XACML content including rules SIS_13, SIS_14, SIS_15...</Policy>"
+    },
+    {
+      "policy_id": "SIS_POLICY_6",
+      "rules_included": [
+        "SIS_16",
+        "SIS_17",
+        "SIS_18"
+      ],
+      "xacml_policy": "<Policy PolicyId='SIS_POLICY_6'>...XACML content including rules SIS_16, SIS_17, SIS_18...</Policy>"
+    },
+    {
+      "policy_id": "SIS_POLICY_7",
+      "rules_included": [
+        "SIS_19",
+        "SIS_20",
+        "SIS_21"
+      ],
+      "xacml_policy": "<Policy PolicyId='SIS_POLICY_7'>...XACML content including rules SIS_19, SIS_20, SIS_21...</Policy>"
+    },
+    {
+      "policy_id": "SIS_POLICY_8",
+      "rules_included": [
+        "SIS_22",
+        "SIS_23",
+        "SIS_24"
+      ],
+      "xacml_policy": "<Policy PolicyId='SIS_POLICY_8'>...XACML content including rules SIS_22, SIS_23, SIS_24...</Policy>"
+    },
+    {
+      "policy_id": "SIS_POLICY_9",
+      "rules_included": [
+        "SIS_25",
+        "SIS_26",
+        "SIS_27"
+      ],
+      "xacml_policy": "<Policy PolicyId='SIS_POLICY_9'>...XACML content including rules SIS_25, SIS_26, SIS_27...</Policy>"
+    },
+    {
+      "policy_id": "SIS_POLICY_10",
+      "rules_included": [
+        "SIS_28",
+        "SIS_29",
+        "SIS_30"
+      ],
+      "xacml_policy": "<Policy PolicyId='SIS_POLICY_10'>...XACML content including rules SIS_28, SIS_29, SIS_30...</Policy>"
+    },
+    {
+      "policy_id": "SIS_POLICY_11",
+      "rules_included": [
+        "SIS_31",
+        "SIS_32"
+      ],
+      "xacml_policy": "<Policy PolicyId='SIS_POLICY_11'>...XACML content including rules SIS_31, SIS_32...</Policy>"
+    },
+    {
+      "policy_id": "SIS_POLICY_12",
+      "rules_included": [
+        "SIS_33",
+        "SIS_34"
+      ],
+      "xacml_policy": "<Policy PolicyId='SIS_POLICY_12'>...XACML content including rules SIS_33, SIS_34...</Policy>"
+    },
+    {
+      "policy_id": "SIS_POLICY_13",
+      "rules_included": [
+        "SIS_35",
+        "SIS_36"
+      ],
+      "xacml_policy": "<Policy PolicyId='SIS_POLICY_13'>...XACML content including rules SIS_35, SIS_36...</Policy>"
+    },
+    {
+      "policy_id": "SIS_POLICY_14",
+      "rules_included": [
+        "SIS_37",
+        "SIS_38"
+      ],
+      "xacml_policy": "<Policy PolicyId='SIS_POLICY_14'>...XACML content including rules SIS_37, SIS_38...</Policy>"
+    },
+    {
+      "policy_id": "SIS_POLICY_15",
+      "rules_included": [
+        "SIS_39",
+        "SIS_40"
+      ],
+      "xacml_policy": "<Policy PolicyId='SIS_POLICY_15'>...XACML content including rules SIS_39, SIS_40...</Policy>"
+    }
+  ]
+}

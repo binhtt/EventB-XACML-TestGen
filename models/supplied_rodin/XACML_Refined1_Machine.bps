@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.psFile>
+    <org.eventb.core.psStatus name="EvaluateRequest /act4/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="34" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="EvaluateRequest /act3/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="34" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="Combine_PermitOverrides_Permit/grd1/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="35" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="Combine_PermitOverrides_Permit/grd2/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="35" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="Combine_PermitOverrides_Permit/decision/EQL" org.eventb.core.confidence="0" org.eventb.core.poStamp="35" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="Combine_PermitOverrides_Deny/grd1/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="36" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="Combine_PermitOverrides_Deny/grd2/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="36" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="Combine_PermitOverrides_Deny/grd3/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="36" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="Combine_PermitOverrides_Deny/decision/EQL" org.eventb.core.confidence="0" org.eventb.core.poStamp="36" org.eventb.core.psManual="true"/>
+    <org.eventb.core.psStatus name=" Combine_PermitOverrides_NotApplicable/grd1/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="37" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name=" Combine_PermitOverrides_NotApplicable/grd2/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="37" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name=" Combine_PermitOverrides_NotApplicable/decision/EQL" org.eventb.core.confidence="0" org.eventb.core.poStamp="37" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="ApplyCombining_FirstApplicable/grd1/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="38" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="ApplyCombining_FirstApplicable/grd2/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="42" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="ApplyCombining_FirstApplicable/grd3/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="42" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="ApplyCombining_FirstApplicable/act1/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="42" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="ApplyCombining_FirstApplicable/decision/EQL" org.eventb.core.confidence="0" org.eventb.core.poStamp="42" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="Combine_DenyOverrides_Deny/grd1/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="39" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="Combine_DenyOverrides_Deny/grd2/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="43" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="Combine_DenyOverrides_Deny/decision/EQL" org.eventb.core.confidence="0" org.eventb.core.poStamp="43" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="Combine_DenyOverrides_Permit/grd1/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="40" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="Combine_DenyOverrides_Permit/grd2/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="43" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="Combine_DenyOverrides_Permit/grd3/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="43" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="Combine_DenyOverrides_Permit/decision/EQL" org.eventb.core.confidence="0" org.eventb.core.poStamp="43" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="Combine_DenyOverrides_NotApplicable/grd1/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="41" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="Combine_DenyOverrides_NotApplicable/grd2/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="43" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="Combine_DenyOverrides_NotApplicable/decision/EQL" org.eventb.core.confidence="0" org.eventb.core.poStamp="43" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="Combine_FirstApplicable_NotApplicable/grd1/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="47" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="Combine_FirstApplicable_NotApplicable/grd2/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="47" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="Combine_FirstApplicable_NotApplicable/decision/EQL" org.eventb.core.confidence="0" org.eventb.core.poStamp="47" org.eventb.core.psManual="false"/>
+</org.eventb.core.psFile>

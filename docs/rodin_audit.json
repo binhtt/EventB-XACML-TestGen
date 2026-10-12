@@ -1,0 +1,1364 @@
+{
+  "scope": "Native XML structural extraction; stored proof-status audit; not proof replay or Event-B execution",
+  "contexts": [
+    {
+      "name": "XACML_Context",
+      "sets": [
+        {
+          "name": "'",
+          "identifier": "SUBJECT"
+        },
+        {
+          "name": "(",
+          "identifier": "RESOURCE"
+        },
+        {
+          "name": ")",
+          "identifier": "ACTION"
+        },
+        {
+          "name": "*",
+          "identifier": "ENVIRONMENT"
+        },
+        {
+          "name": "+",
+          "identifier": "RULE"
+        },
+        {
+          "name": ",",
+          "identifier": "DECISION"
+        }
+      ],
+      "constants": [
+        {
+          "name": "-",
+          "identifier": "target"
+        },
+        {
+          "name": ".",
+          "identifier": "condition"
+        },
+        {
+          "name": "/",
+          "identifier": "effect"
+        },
+        {
+          "name": "4",
+          "identifier": "Permit"
+        },
+        {
+          "name": "5",
+          "identifier": "Deny"
+        },
+        {
+          "name": "6",
+          "identifier": "NotApplicable"
+        }
+      ],
+      "axioms": [
+        {
+          "name": "0",
+          "label": "axm1",
+          "predicate": "target ∈ RULE → ℙ(SUBJECT × RESOURCE × ACTION × ENVIRONMENT)"
+        },
+        {
+          "name": "1",
+          "label": "axm2",
+          "predicate": "condition ∈ RULE → (SUBJECT × RESOURCE × ACTION × ENVIRONMENT → BOOL)"
+        },
+        {
+          "name": "2",
+          "label": "axm3",
+          "predicate": "effect ∈ RULE → DECISION"
+        },
+        {
+          "name": "3",
+          "label": "axm4",
+          "predicate": "partition(DECISION, {Permit}, {Deny}, {NotApplicable})"
+        },
+        {
+          "name": "7",
+          "label": "axm5",
+          "predicate": "NotApplicable ∉ ran(effect)"
+        }
+      ],
+      "extends": []
+    },
+    {
+      "name": "XACML_Refined1_Context",
+      "sets": [
+        {
+          "name": "(",
+          "identifier": "POLICY"
+        },
+        {
+          "name": ")",
+          "identifier": "POLICY_SET"
+        },
+        {
+          "name": "*",
+          "identifier": "COMBINING_ALGORITHM"
+        }
+      ],
+      "constants": [
+        {
+          "name": "+",
+          "identifier": "policies"
+        },
+        {
+          "name": "?",
+          "identifier": "policy_set_policies"
+        },
+        {
+          "name": ",",
+          "identifier": "policy_target"
+        },
+        {
+          "name": "-",
+          "identifier": "policy_set_target"
+        },
+        {
+          "name": "4",
+          "identifier": "PermitOverrides"
+        },
+        {
+          "name": "5",
+          "identifier": "DenyOverrides"
+        },
+        {
+          "name": "6",
+          "identifier": "FirstApplicable"
+        },
+        {
+          "name": "8",
+          "identifier": "combining_alg_policy"
+        },
+        {
+          "name": "9",
+          "identifier": "combining_alg_policyset"
+        },
+        {
+          "name": ";",
+          "identifier": "rule_order"
+        }
+      ],
+      "axioms": [
+        {
+          "name": "/",
+          "label": "axm1",
+          "predicate": "policies ∈ POLICY → ℙ(RULE)"
+        },
+        {
+          "name": "@",
+          "label": "axm2",
+          "predicate": "policy_set_policies ∈ POLICY_SET → ℙ(POLICY)"
+        },
+        {
+          "name": "0",
+          "label": "axm3",
+          "predicate": "policy_target ∈ POLICY → ℙ(SUBJECT × RESOURCE × ACTION × ENVIRONMENT)"
+        },
+        {
+          "name": "1",
+          "label": "axm4",
+          "predicate": "policy_set_target ∈ POLICY_SET → ℙ(SUBJECT × RESOURCE × ACTION × ENVIRONMENT)"
+        },
+        {
+          "name": "2",
+          "label": "axm5",
+          "predicate": "partition(\r\n    COMBINING_ALGORITHM,\r\n    {PermitOverrides},\r\n    {DenyOverrides},\r\n    {FirstApplicable}\r\n)"
+        },
+        {
+          "name": "7",
+          "label": "axm6",
+          "predicate": "combining_alg_policy ∈ POLICY → COMBINING_ALGORITHM"
+        },
+        {
+          "name": ":",
+          "label": "axm7",
+          "predicate": "combining_alg_policyset ∈ POLICY_SET → COMBINING_ALGORITHM"
+        },
+        {
+          "name": "=",
+          "label": "axm8",
+          "predicate": "rule_order ∈ POLICY → (RULE → ℕ)"
+        },
+        {
+          "name": ">",
+          "label": "axm9",
+          "predicate": "∀pol·pol ∈ POLICY ⇒ (∀r1,r2·r1 ∈ policies(pol) ∧ r2 ∈ policies(pol) ∧ r1 ≠ r2 ⇒ \r\nrule_order(pol)(r1) ≠ rule_order(pol)(r2))"
+        }
+      ],
+      "extends": [
+        {
+          "name": "'",
+          "target": "XACML_Context"
+        }
+      ]
+    }
+  ],
+  "machines": [
+    {
+      "name": "XACML_AbsMachine",
+      "refines": [],
+      "sees": [
+        {
+          "name": "(",
+          "target": "XACML_Context"
+        }
+      ],
+      "invariants": [
+        {
+          "name": ",",
+          "label": "inv1",
+          "predicate": "current_request ∈ SUBJECT × RESOURCE × ACTION × ENVIRONMENT"
+        },
+        {
+          "name": "-",
+          "label": "inv2",
+          "predicate": "decision ∈ DECISION"
+        },
+        {
+          "name": ".",
+          "label": "inv3",
+          "predicate": "applicable_rules ⊆ RULE"
+        },
+        {
+          "name": "0",
+          "label": "inv4",
+          "predicate": "env∈ENVIRONMENT"
+        }
+      ],
+      "events": [
+        {
+          "name": "'",
+          "convergence": "0",
+          "extended": "false",
+          "label": "INITIALISATION",
+          "parameters": [],
+          "guards": [],
+          "actions": [
+            {
+              "name": "'",
+              "assignment": "current_request :∈ SUBJECT × RESOURCE × ACTION × ENVIRONMENT",
+              "label": "act1"
+            },
+            {
+              "name": "(",
+              "assignment": "decision ≔ NotApplicable",
+              "label": "act2"
+            },
+            {
+              "name": ")",
+              "assignment": "applicable_rules ≔ ∅",
+              "label": "act3"
+            },
+            {
+              "name": "*",
+              "assignment": "env:∈ENVIRONMENT",
+              "label": "act4"
+            }
+          ],
+          "refines": []
+        },
+        {
+          "name": "1",
+          "convergence": "0",
+          "extended": "false",
+          "label": "EvaluateRequest ",
+          "parameters": [
+            {
+              "name": "'",
+              "identifier": "req_subj"
+            },
+            {
+              "name": "(",
+              "identifier": "req_res"
+            },
+            {
+              "name": ")",
+              "identifier": "req_act"
+            },
+            {
+              "name": "*",
+              "identifier": "req_env"
+            }
+          ],
+          "guards": [
+            {
+              "name": "+",
+              "label": "grd1",
+              "predicate": "current_request = (req_subj↦req_res↦req_act↦req_env)"
+            }
+          ],
+          "actions": [
+            {
+              "name": ",",
+              "assignment": "applicable_rules ≔ {r ∣ r ∈ RULE ∧(req_subj↦ req_res↦ req_act↦ req_env)∈ \r\ntarget(r) ∧ condition(r)(req_subj↦ req_res↦ req_act↦ req_env) = TRUE}",
+              "label": "act1"
+            },
+            {
+              "name": "-",
+              "assignment": "decision ≔ NotApplicable",
+              "label": "act2"
+            }
+          ],
+          "refines": []
+        },
+        {
+          "name": "2",
+          "convergence": "0",
+          "extended": "false",
+          "label": "ApplyRule ",
+          "parameters": [
+            {
+              "name": "(",
+              "identifier": "r"
+            }
+          ],
+          "guards": [
+            {
+              "name": ")",
+              "label": "grd1",
+              "predicate": "r ∈ applicable_rules"
+            }
+          ],
+          "actions": [
+            {
+              "name": "'",
+              "assignment": "decision ≔ effect(r)",
+              "label": "act1"
+            }
+          ],
+          "refines": []
+        }
+      ]
+    },
+    {
+      "name": "XACML_Refined1_Machine",
+      "refines": [
+        {
+          "name": "(",
+          "target": "XACML_AbsMachine"
+        }
+      ],
+      "sees": [
+        {
+          "name": ")",
+          "target": "XACML_Refined1_Context"
+        }
+      ],
+      "invariants": [
+        {
+          "name": "/",
+          "label": "inv1",
+          "predicate": "applicable_policies ⊆ POLICY"
+        },
+        {
+          "name": "0",
+          "label": "inv2",
+          "predicate": "applicable_policy_sets ⊆ POLICY_SET"
+        }
+      ],
+      "events": [
+        {
+          "name": "'",
+          "convergence": "0",
+          "extended": "true",
+          "label": "INITIALISATION",
+          "parameters": [],
+          "guards": [],
+          "actions": [
+            {
+              "name": "'",
+              "assignment": "applicable_policies≔∅",
+              "label": "act5"
+            },
+            {
+              "name": "(",
+              "assignment": "applicable_policy_sets≔∅",
+              "label": "act6"
+            }
+          ],
+          "refines": []
+        },
+        {
+          "name": "5",
+          "convergence": "0",
+          "extended": "true",
+          "label": "EvaluateRequest ",
+          "parameters": [],
+          "guards": [],
+          "actions": [
+            {
+              "name": "(",
+              "assignment": "applicable_policies ≔ {p ∣ p ∈ POLICY ∧ \r\n                              (req_subj↦ req_res↦ req_act↦ req_env) ∈ policy_target(p)}",
+              "label": "act4"
+            },
+            {
+              "name": ")",
+              "assignment": "applicable_policy_sets ≔ {ps ∣ ps ∈ POLICY_SET ∧ \r\n                                  (req_subj↦ req_res↦ req_act↦ req_env) ∈ policy_set_target(ps)}",
+              "label": "act3"
+            }
+          ],
+          "refines": [
+            {
+              "name": "'",
+              "target": "EvaluateRequest "
+            }
+          ]
+        },
+        {
+          "name": "6",
+          "convergence": "0",
+          "extended": "false",
+          "label": "Combine_PermitOverrides_Permit",
+          "parameters": [
+            {
+              "name": "'",
+              "identifier": "pol"
+            }
+          ],
+          "guards": [
+            {
+              "name": "(",
+              "label": "grd1",
+              "predicate": "pol ∈ applicable_policies ∧\r\n        combining_alg_policy(pol) = PermitOverrides"
+            },
+            {
+              "name": ")",
+              "label": "grd2",
+              "predicate": "∃r·r ∈ applicable_rules ∧ r ∈ policies(pol) ∧ effect(r) = Permit"
+            }
+          ],
+          "actions": [
+            {
+              "name": "*",
+              "assignment": "decision ≔ Permit",
+              "label": "act1"
+            }
+          ],
+          "refines": []
+        },
+        {
+          "name": "7",
+          "convergence": "0",
+          "extended": "false",
+          "label": "Combine_PermitOverrides_Deny",
+          "parameters": [
+            {
+              "name": "(",
+              "identifier": "pol"
+            }
+          ],
+          "guards": [
+            {
+              "name": "'",
+              "label": "grd1",
+              "predicate": "pol ∈ applicable_policies ∧\r\n        combining_alg_policy(pol) = PermitOverrides"
+            },
+            {
+              "name": ")",
+              "label": "grd2",
+              "predicate": "¬(∃r·r ∈ applicable_rules ∧ r ∈ policies(pol) ∧ effect(r) = Permit)"
+            },
+            {
+              "name": "*",
+              "label": "grd3",
+              "predicate": "∃r·r ∈ applicable_rules ∧ r ∈ policies(pol) ∧ effect(r) = Deny"
+            }
+          ],
+          "actions": [
+            {
+              "name": "+",
+              "assignment": "decision ≔ Deny",
+              "label": "act1"
+            }
+          ],
+          "refines": []
+        },
+        {
+          "name": "8",
+          "convergence": "0",
+          "extended": "false",
+          "label": " Combine_PermitOverrides_NotApplicable",
+          "parameters": [
+            {
+              "name": "'",
+              "identifier": "pol"
+            }
+          ],
+          "guards": [
+            {
+              "name": "(",
+              "label": "grd1",
+              "predicate": "pol ∈ applicable_policies ∧\r\n        combining_alg_policy(pol) = PermitOverrides"
+            },
+            {
+              "name": ")",
+              "label": "grd2",
+              "predicate": "applicable_rules ∩ policies(pol) = ∅"
+            }
+          ],
+          "actions": [
+            {
+              "name": "*",
+              "assignment": "decision ≔ NotApplicable",
+              "label": "act1"
+            }
+          ],
+          "refines": []
+        },
+        {
+          "name": "9",
+          "convergence": "0",
+          "extended": "false",
+          "label": "ApplyCombining_FirstApplicable",
+          "parameters": [
+            {
+              "name": "'",
+              "identifier": "pol"
+            },
+            {
+              "name": "(",
+              "identifier": "r"
+            }
+          ],
+          "guards": [
+            {
+              "name": ")",
+              "label": "grd1",
+              "predicate": "pol ∈ applicable_policies ∧\r\n        combining_alg_policy(pol) = FirstApplicable"
+            },
+            {
+              "name": "*",
+              "label": "grd2",
+              "predicate": "r ∈ applicable_rules ∧ r ∈ policies(pol)"
+            },
+            {
+              "name": "+",
+              "label": "grd3",
+              "predicate": " ∀s·s ∈ policies(pol) ∧ s ∈ applicable_rules ⇒ rule_order(pol)(r) ≤ rule_order(pol)(s)"
+            }
+          ],
+          "actions": [
+            {
+              "name": ",",
+              "assignment": "decision ≔ effect(r)",
+              "label": "act1"
+            }
+          ],
+          "refines": []
+        },
+        {
+          "name": ":",
+          "convergence": "0",
+          "extended": "false",
+          "label": "Combine_DenyOverrides_Deny",
+          "parameters": [
+            {
+              "name": "(",
+              "identifier": "pol"
+            }
+          ],
+          "guards": [
+            {
+              "name": "'",
+              "label": "grd1",
+              "predicate": "pol ∈ applicable_policies ∧\r\n       combining_alg_policy(pol) = DenyOverrides"
+            },
+            {
+              "name": ")",
+              "label": "grd2",
+              "predicate": "∃r·\r\n            r ∈ applicable_rules ∧\r\n            r ∈ policies(pol) ∧\r\n            effect(r) = Deny"
+            }
+          ],
+          "actions": [
+            {
+              "name": "*",
+              "assignment": "decision ≔ Deny",
+              "label": "act1"
+            }
+          ],
+          "refines": []
+        },
+        {
+          "name": ";",
+          "convergence": "0",
+          "extended": "false",
+          "label": "Combine_DenyOverrides_Permit",
+          "parameters": [
+            {
+              "name": "'",
+              "identifier": "pol"
+            }
+          ],
+          "guards": [
+            {
+              "name": "(",
+              "label": "grd1",
+              "predicate": "pol ∈ applicable_policies ∧\r\n        combining_alg_policy(pol) = DenyOverrides"
+            },
+            {
+              "name": ")",
+              "label": "grd2",
+              "predicate": "¬(∃r·\r\n            r ∈ applicable_rules ∧\r\n            r ∈ policies(pol) ∧\r\n            effect(r) = Deny)"
+            },
+            {
+              "name": "*",
+              "label": "grd3",
+              "predicate": "∃r·\r\n            r ∈ applicable_rules ∧\r\n            r ∈ policies(pol) ∧\r\n            effect(r) = Permit"
+            }
+          ],
+          "actions": [
+            {
+              "name": "+",
+              "assignment": "decision ≔ Permit",
+              "label": "act1"
+            }
+          ],
+          "refines": []
+        },
+        {
+          "name": "=",
+          "convergence": "0",
+          "extended": "false",
+          "label": "Combine_DenyOverrides_NotApplicable",
+          "parameters": [
+            {
+              "name": "'",
+              "identifier": "pol"
+            }
+          ],
+          "guards": [
+            {
+              "name": "(",
+              "label": "grd1",
+              "predicate": "pol ∈ applicable_policies ∧\r\n        combining_alg_policy(pol) = DenyOverrides"
+            },
+            {
+              "name": ")",
+              "label": "grd2",
+              "predicate": " applicable_rules ∩ policies(pol) = ∅"
+            }
+          ],
+          "actions": [
+            {
+              "name": "*",
+              "assignment": "decision ≔ NotApplicable",
+              "label": "act1"
+            }
+          ],
+          "refines": []
+        },
+        {
+          "name": ">",
+          "convergence": "0",
+          "extended": "false",
+          "label": "Combine_FirstApplicable_NotApplicable",
+          "parameters": [
+            {
+              "name": "'",
+              "identifier": "pol"
+            }
+          ],
+          "guards": [
+            {
+              "name": "(",
+              "label": "grd1",
+              "predicate": " pol ∈ applicable_policies ∧\r\n        combining_alg_policy(pol) = FirstApplicable\r\n"
+            },
+            {
+              "name": ")",
+              "label": "grd2",
+              "predicate": "applicable_rules ∩ policies(pol) = ∅"
+            }
+          ],
+          "actions": [
+            {
+              "name": "*",
+              "assignment": "decision ≔ NotApplicable",
+              "label": "act1"
+            }
+          ],
+          "refines": []
+        }
+      ]
+    },
+    {
+      "name": "XACML_Refined2_Machine",
+      "refines": [
+        {
+          "name": ")",
+          "target": "XACML_Refined1_Machine"
+        }
+      ],
+      "sees": [
+        {
+          "name": "(",
+          "target": "XACML_Refined1_Context"
+        }
+      ],
+      "invariants": [
+        {
+          "name": "/",
+          "label": "inv1",
+          "predicate": "decision = Permit ⇒\r\n    (∃pol,r·\r\n        pol ∈ applicable_policies ∧\r\n        r ∈ applicable_rules ∧\r\n        r ∈ policies(pol) ∧\r\n        effect(r) = Permit)"
+        },
+        {
+          "name": "0",
+          "label": "inv2",
+          "predicate": "decision = Deny ⇒\r\n    (∃pol,r·\r\n        pol ∈ applicable_policies ∧\r\n        r ∈ applicable_rules ∧\r\n        r ∈ policies(pol) ∧\r\n        effect(r) = Deny)\r\n"
+        },
+        {
+          "name": "7",
+          "label": "inv3",
+          "predicate": "applicable_rules = ∅ ⇒\r\n    decision = NotApplicable"
+        }
+      ],
+      "events": [
+        {
+          "name": "'",
+          "convergence": "0",
+          "extended": "true",
+          "label": "INITIALISATION",
+          "parameters": [],
+          "guards": [],
+          "actions": [],
+          "refines": []
+        },
+        {
+          "name": "3",
+          "convergence": "0",
+          "extended": "true",
+          "label": "EvaluateRequest",
+          "parameters": [],
+          "guards": [],
+          "actions": [],
+          "refines": [
+            {
+              "name": "'",
+              "target": "EvaluateRequest "
+            }
+          ]
+        },
+        {
+          "name": "4",
+          "convergence": "0",
+          "extended": "true",
+          "label": "Combine_PermitOverrides_Permit ",
+          "parameters": [],
+          "guards": [],
+          "actions": [],
+          "refines": [
+            {
+              "name": "'",
+              "target": "Combine_PermitOverrides_Permit"
+            }
+          ]
+        },
+        {
+          "name": "5",
+          "convergence": "0",
+          "extended": "true",
+          "label": "Combine_PermitOverrides_Deny",
+          "parameters": [],
+          "guards": [],
+          "actions": [],
+          "refines": [
+            {
+              "name": "'",
+              "target": "Combine_PermitOverrides_Deny"
+            }
+          ]
+        },
+        {
+          "name": "6",
+          "convergence": "0",
+          "extended": "true",
+          "label": "Combine_PermitOverrides_NotApplicable",
+          "parameters": [],
+          "guards": [],
+          "actions": [],
+          "refines": [
+            {
+              "name": "(",
+              "target": " Combine_PermitOverrides_NotApplicable"
+            }
+          ]
+        },
+        {
+          "name": "8",
+          "convergence": "0",
+          "extended": "true",
+          "label": "Combine_DenyOverrides_Deny",
+          "parameters": [],
+          "guards": [],
+          "actions": [],
+          "refines": [
+            {
+              "name": "'",
+              "target": "Combine_DenyOverrides_Deny"
+            }
+          ]
+        },
+        {
+          "name": "9",
+          "convergence": "0",
+          "extended": "true",
+          "label": "Combine_DenyOverrides_Permit",
+          "parameters": [],
+          "guards": [],
+          "actions": [],
+          "refines": [
+            {
+              "name": "'",
+              "target": "Combine_DenyOverrides_Permit"
+            }
+          ]
+        },
+        {
+          "name": ":",
+          "convergence": "0",
+          "extended": "true",
+          "label": "Combine_DenyOverrides_NotApplicable",
+          "parameters": [],
+          "guards": [],
+          "actions": [],
+          "refines": [
+            {
+              "name": "'",
+              "target": "Combine_DenyOverrides_NotApplicable"
+            }
+          ]
+        },
+        {
+          "name": ";",
+          "convergence": "0",
+          "extended": "true",
+          "label": "ApplyCombining_FirstApplicable",
+          "parameters": [],
+          "guards": [],
+          "actions": [],
+          "refines": [
+            {
+              "name": "'",
+              "target": "ApplyCombining_FirstApplicable"
+            }
+          ]
+        },
+        {
+          "name": "=",
+          "convergence": "0",
+          "extended": "true",
+          "label": "Combine_FirstApplicable_NotApplicable",
+          "parameters": [],
+          "guards": [],
+          "actions": [],
+          "refines": [
+            {
+              "name": "'",
+              "target": "Combine_FirstApplicable_NotApplicable"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "proof_status": [
+    {
+      "component": "XACML_AbsMachine",
+      "stored_status_entries": 4,
+      "confidence_1000": 4,
+      "confidence_0": 0,
+      "broken": 0,
+      "manual_flag": 0,
+      "entries": [
+        {
+          "name": "INITIALISATION/act1/FIS",
+          "confidence": "1000",
+          "poStamp": "8",
+          "psManual": "false"
+        },
+        {
+          "name": "INITIALISATION/act4/FIS",
+          "confidence": "1000",
+          "poStamp": "8",
+          "psManual": "false"
+        },
+        {
+          "name": "EvaluateRequest /act1/WD",
+          "confidence": "1000",
+          "poStamp": "8",
+          "psManual": "false"
+        },
+        {
+          "name": "ApplyRule /act1/WD",
+          "confidence": "1000",
+          "poStamp": "8",
+          "psManual": "false"
+        }
+      ]
+    },
+    {
+      "component": "XACML_Context",
+      "stored_status_entries": 0,
+      "confidence_1000": 0,
+      "confidence_0": 0,
+      "broken": 0,
+      "manual_flag": 0,
+      "entries": []
+    },
+    {
+      "component": "XACML_Refined1_Context",
+      "stored_status_entries": 1,
+      "confidence_1000": 1,
+      "confidence_0": 0,
+      "broken": 0,
+      "manual_flag": 0,
+      "entries": [
+        {
+          "name": "axm9/WD",
+          "confidence": "1000",
+          "poStamp": "12",
+          "psManual": "false"
+        }
+      ]
+    },
+    {
+      "component": "XACML_Refined1_Machine",
+      "stored_status_entries": 30,
+      "confidence_1000": 22,
+      "confidence_0": 8,
+      "broken": 0,
+      "manual_flag": 1,
+      "entries": [
+        {
+          "name": "EvaluateRequest /act4/WD",
+          "confidence": "1000",
+          "poStamp": "34",
+          "psManual": "false"
+        },
+        {
+          "name": "EvaluateRequest /act3/WD",
+          "confidence": "1000",
+          "poStamp": "34",
+          "psManual": "false"
+        },
+        {
+          "name": "Combine_PermitOverrides_Permit/grd1/WD",
+          "confidence": "1000",
+          "poStamp": "35",
+          "psManual": "false"
+        },
+        {
+          "name": "Combine_PermitOverrides_Permit/grd2/WD",
+          "confidence": "1000",
+          "poStamp": "35",
+          "psManual": "false"
+        },
+        {
+          "name": "Combine_PermitOverrides_Permit/decision/EQL",
+          "confidence": "0",
+          "poStamp": "35",
+          "psManual": "false"
+        },
+        {
+          "name": "Combine_PermitOverrides_Deny/grd1/WD",
+          "confidence": "1000",
+          "poStamp": "36",
+          "psManual": "false"
+        },
+        {
+          "name": "Combine_PermitOverrides_Deny/grd2/WD",
+          "confidence": "1000",
+          "poStamp": "36",
+          "psManual": "false"
+        },
+        {
+          "name": "Combine_PermitOverrides_Deny/grd3/WD",
+          "confidence": "1000",
+          "poStamp": "36",
+          "psManual": "false"
+        },
+        {
+          "name": "Combine_PermitOverrides_Deny/decision/EQL",
+          "confidence": "0",
+          "poStamp": "36",
+          "psManual": "true"
+        },
+        {
+          "name": " Combine_PermitOverrides_NotApplicable/grd1/WD",
+          "confidence": "1000",
+          "poStamp": "37",
+          "psManual": "false"
+        },
+        {
+          "name": " Combine_PermitOverrides_NotApplicable/grd2/WD",
+          "confidence": "1000",
+          "poStamp": "37",
+          "psManual": "false"
+        },
+        {
+          "name": " Combine_PermitOverrides_NotApplicable/decision/EQL",
+          "confidence": "0",
+          "poStamp": "37",
+          "psManual": "false"
+        },
+        {
+          "name": "ApplyCombining_FirstApplicable/grd1/WD",
+          "confidence": "1000",
+          "poStamp": "38",
+          "psManual": "false"
+        },
+        {
+          "name": "ApplyCombining_FirstApplicable/grd2/WD",
+          "confidence": "1000",
+          "poStamp": "42",
+          "psManual": "false"
+        },
+        {
+          "name": "ApplyCombining_FirstApplicable/grd3/WD",
+          "confidence": "1000",
+          "poStamp": "42",
+          "psManual": "false"
+        },
+        {
+          "name": "ApplyCombining_FirstApplicable/act1/WD",
+          "confidence": "1000",
+          "poStamp": "42",
+          "psManual": "false"
+        },
+        {
+          "name": "ApplyCombining_FirstApplicable/decision/EQL",
+          "confidence": "0",
+          "poStamp": "42",
+          "psManual": "false"
+        },
+        {
+          "name": "Combine_DenyOverrides_Deny/grd1/WD",
+          "confidence": "1000",
+          "poStamp": "39",
+          "psManual": "false"
+        },
+        {
+          "name": "Combine_DenyOverrides_Deny/grd2/WD",
+          "confidence": "1000",
+          "poStamp": "43",
+          "psManual": "false"
+        },
+        {
+          "name": "Combine_DenyOverrides_Deny/decision/EQL",
+          "confidence": "0",
+          "poStamp": "43",
+          "psManual": "false"
+        },
+        {
+          "name": "Combine_DenyOverrides_Permit/grd1/WD",
+          "confidence": "1000",
+          "poStamp": "40",
+          "psManual": "false"
+        },
+        {
+          "name": "Combine_DenyOverrides_Permit/grd2/WD",
+          "confidence": "1000",
+          "poStamp": "43",
+          "psManual": "false"
+        },
+        {
+          "name": "Combine_DenyOverrides_Permit/grd3/WD",
+          "confidence": "1000",
+          "poStamp": "43",
+          "psManual": "false"
+        },
+        {
+          "name": "Combine_DenyOverrides_Permit/decision/EQL",
+          "confidence": "0",
+          "poStamp": "43",
+          "psManual": "false"
+        },
+        {
+          "name": "Combine_DenyOverrides_NotApplicable/grd1/WD",
+          "confidence": "1000",
+          "poStamp": "41",
+          "psManual": "false"
+        },
+        {
+          "name": "Combine_DenyOverrides_NotApplicable/grd2/WD",
+          "confidence": "1000",
+          "poStamp": "43",
+          "psManual": "false"
+        },
+        {
+          "name": "Combine_DenyOverrides_NotApplicable/decision/EQL",
+          "confidence": "0",
+          "poStamp": "43",
+          "psManual": "false"
+        },
+        {
+          "name": "Combine_FirstApplicable_NotApplicable/grd1/WD",
+          "confidence": "1000",
+          "poStamp": "47",
+          "psManual": "false"
+        },
+        {
+          "name": "Combine_FirstApplicable_NotApplicable/grd2/WD",
+          "confidence": "1000",
+          "poStamp": "47",
+          "psManual": "false"
+        },
+        {
+          "name": "Combine_FirstApplicable_NotApplicable/decision/EQL",
+          "confidence": "0",
+          "poStamp": "47",
+          "psManual": "false"
+        }
+      ]
+    },
+    {
+      "component": "XACML_Refined2_Machine",
+      "stored_status_entries": 32,
+      "confidence_1000": 23,
+      "confidence_0": 9,
+      "broken": 1,
+      "manual_flag": 1,
+      "entries": [
+        {
+          "name": "inv1/WD",
+          "confidence": "1000",
+          "poStamp": "28",
+          "psManual": "false"
+        },
+        {
+          "name": "inv2/WD",
+          "confidence": "1000",
+          "poStamp": "29",
+          "psManual": "false"
+        },
+        {
+          "name": "INITIALISATION/inv1/INV",
+          "confidence": "1000",
+          "poStamp": "28",
+          "psManual": "false"
+        },
+        {
+          "name": "INITIALISATION/inv2/INV",
+          "confidence": "1000",
+          "poStamp": "30",
+          "psManual": "false"
+        },
+        {
+          "name": "INITIALISATION/inv3/INV",
+          "confidence": "1000",
+          "poStamp": "30",
+          "psManual": "false"
+        },
+        {
+          "name": "EvaluateRequest/inv1/INV",
+          "confidence": "1000",
+          "poStamp": "30",
+          "psManual": "false"
+        },
+        {
+          "name": "EvaluateRequest/inv2/INV",
+          "confidence": "1000",
+          "poStamp": "30",
+          "psManual": "false"
+        },
+        {
+          "name": "EvaluateRequest/inv3/INV",
+          "confidence": "1000",
+          "poStamp": "30",
+          "psManual": "false"
+        },
+        {
+          "name": "Combine_PermitOverrides_Permit /inv1/INV",
+          "confidence": "0",
+          "poStamp": "30",
+          "psManual": "true"
+        },
+        {
+          "name": "Combine_PermitOverrides_Permit /inv2/INV",
+          "confidence": "1000",
+          "poStamp": "30",
+          "psManual": "false"
+        },
+        {
+          "name": "Combine_PermitOverrides_Permit /inv3/INV",
+          "confidence": "0",
+          "poStamp": "30",
+          "psManual": "false"
+        },
+        {
+          "name": "Combine_PermitOverrides_Deny/inv1/INV",
+          "confidence": "1000",
+          "poStamp": "30",
+          "psManual": "false"
+        },
+        {
+          "name": "Combine_PermitOverrides_Deny/inv2/INV",
+          "confidence": "1000",
+          "poStamp": "30",
+          "psBroken": "true",
+          "psManual": "false"
+        },
+        {
+          "name": "Combine_PermitOverrides_Deny/inv3/INV",
+          "confidence": "0",
+          "poStamp": "30",
+          "psManual": "false"
+        },
+        {
+          "name": "Combine_PermitOverrides_NotApplicable/inv1/INV",
+          "confidence": "1000",
+          "poStamp": "30",
+          "psManual": "false"
+        },
+        {
+          "name": "Combine_PermitOverrides_NotApplicable/inv2/INV",
+          "confidence": "1000",
+          "poStamp": "30",
+          "psManual": "false"
+        },
+        {
+          "name": "Combine_PermitOverrides_NotApplicable/inv3/INV",
+          "confidence": "1000",
+          "poStamp": "30",
+          "psManual": "false"
+        },
+        {
+          "name": "Combine_DenyOverrides_Deny/inv1/INV",
+          "confidence": "1000",
+          "poStamp": "31",
+          "psManual": "false"
+        },
+        {
+          "name": "Combine_DenyOverrides_Deny/inv2/INV",
+          "confidence": "0",
+          "poStamp": "31",
+          "psManual": "false"
+        },
+        {
+          "name": "Combine_DenyOverrides_Deny/inv3/INV",
+          "confidence": "0",
+          "poStamp": "31",
+          "psManual": "false"
+        },
+        {
+          "name": "Combine_DenyOverrides_Permit/inv1/INV",
+          "confidence": "0",
+          "poStamp": "34",
+          "psManual": "false"
+        },
+        {
+          "name": "Combine_DenyOverrides_Permit/inv2/INV",
+          "confidence": "1000",
+          "poStamp": "34",
+          "psManual": "false"
+        },
+        {
+          "name": "Combine_DenyOverrides_Permit/inv3/INV",
+          "confidence": "0",
+          "poStamp": "34",
+          "psManual": "false"
+        },
+        {
+          "name": "Combine_DenyOverrides_NotApplicable/inv1/INV",
+          "confidence": "1000",
+          "poStamp": "35",
+          "psManual": "false"
+        },
+        {
+          "name": "Combine_DenyOverrides_NotApplicable/inv2/INV",
+          "confidence": "1000",
+          "poStamp": "35",
+          "psManual": "false"
+        },
+        {
+          "name": "Combine_DenyOverrides_NotApplicable/inv3/INV",
+          "confidence": "1000",
+          "poStamp": "35",
+          "psManual": "false"
+        },
+        {
+          "name": "ApplyCombining_FirstApplicable/inv1/INV",
+          "confidence": "0",
+          "poStamp": "36",
+          "psManual": "false"
+        },
+        {
+          "name": "ApplyCombining_FirstApplicable/inv2/INV",
+          "confidence": "0",
+          "poStamp": "36",
+          "psManual": "false"
+        },
+        {
+          "name": "ApplyCombining_FirstApplicable/inv3/INV",
+          "confidence": "1000",
+          "poStamp": "36",
+          "psManual": "false"
+        },
+        {
+          "name": "Combine_FirstApplicable_NotApplicable/inv1/INV",
+          "confidence": "1000",
+          "poStamp": "37",
+          "psManual": "false"
+        },
+        {
+          "name": "Combine_FirstApplicable_NotApplicable/inv2/INV",
+          "confidence": "1000",
+          "poStamp": "37",
+          "psManual": "false"
+        },
+        {
+          "name": "Combine_FirstApplicable_NotApplicable/inv3/INV",
+          "confidence": "1000",
+          "poStamp": "37",
+          "psManual": "false"
+        }
+      ]
+    }
+  ],
+  "source_files": [
+    {
+      "file": "XACML_AbsMachine.bps",
+      "sha256": "77a6cc764c0288145eda4b0d677a56ebf667753af4f7bd755904624b126809c5"
+    },
+    {
+      "file": "XACML_AbsMachine.bum",
+      "sha256": "4018db2717e6e9f2e0e4383ac11d5454de088b0b69abf3d3b26b5271b6b6d713"
+    },
+    {
+      "file": "XACML_Context.bps",
+      "sha256": "cc3713fd1d32c68ba2854244857aeb0cd0d116046563b176bca02961234b6922"
+    },
+    {
+      "file": "XACML_Context.buc",
+      "sha256": "1d3b7cc353e4448aa0d08cd2b6356c7bf11612eae02fabac7573426e79f1496e"
+    },
+    {
+      "file": "XACML_Refined1_Context.bps",
+      "sha256": "6486e25fc23ff8c18de7590468f349b85c4fb47b19237182983bbf223209ca9f"
+    },
+    {
+      "file": "XACML_Refined1_Context.buc",
+      "sha256": "05fb34a4f71a75fdad65438955bc924a1b841b226ea51f92e905f822fdaa8e06"
+    },
+    {
+      "file": "XACML_Refined1_Machine.bps",
+      "sha256": "9cf0577e208b97fe21eaf05847013d5210cabe39e928fc026bae5889d852167e"
+    },
+    {
+      "file": "XACML_Refined1_Machine.bum",
+      "sha256": "2dd6495728c6931c992b652a9e1e0564a7ee6f6570cd2b2c8187c12f7825cff3"
+    },
+    {
+      "file": "XACML_Refined2_Machine.bps",
+      "sha256": "cac10d25b5c5cc89228351f54210837a8db46c025bc7b65cd8f576f73fa2a558"
+    },
+    {
+      "file": "XACML_Refined2_Machine.bum",
+      "sha256": "75d64052263865b96deda2b683261c06f81732f2880e381531d9d380ab9d1d03"
+    }
+  ]
+}

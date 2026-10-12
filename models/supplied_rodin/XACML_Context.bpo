@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.poFile org.eventb.core.poStamp="4">
+    <org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.poStamp="2">
+        <org.eventb.core.poIdentifier name="ACTION" org.eventb.core.type="ℙ(ACTION)"/>
+        <org.eventb.core.poIdentifier name="SUBJECT" org.eventb.core.type="ℙ(SUBJECT)"/>
+        <org.eventb.core.poIdentifier name="RESOURCE" org.eventb.core.type="ℙ(RESOURCE)"/>
+        <org.eventb.core.poIdentifier name="ENVIRONMENT" org.eventb.core.type="ℙ(ENVIRONMENT)"/>
+        <org.eventb.core.poIdentifier name="RULE" org.eventb.core.type="ℙ(RULE)"/>
+        <org.eventb.core.poIdentifier name="DECISION" org.eventb.core.type="ℙ(DECISION)"/>
+        <org.eventb.core.poIdentifier name="condition" org.eventb.core.type="ℙ(RULE×ℙ(SUBJECT×RESOURCE×ACTION×ENVIRONMENT×BOOL))"/>
+        <org.eventb.core.poIdentifier name="Deny" org.eventb.core.type="DECISION"/>
+        <org.eventb.core.poIdentifier name="target" org.eventb.core.type="ℙ(RULE×ℙ(SUBJECT×RESOURCE×ACTION×ENVIRONMENT))"/>
+        <org.eventb.core.poIdentifier name="effect" org.eventb.core.type="ℙ(RULE×DECISION)"/>
+        <org.eventb.core.poIdentifier name="NotApplicable" org.eventb.core.type="DECISION"/>
+        <org.eventb.core.poIdentifier name="Permit" org.eventb.core.type="DECISION"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/XACML2Event-B/XACML_Context.bpo|org.eventb.core.poFile#XACML_Context|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="4">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="target∈RULE → ℙ(SUBJECT × RESOURCE × ACTION × ENVIRONMENT)" org.eventb.core.source="/XACML2Event-B/XACML_Context.buc|org.eventb.core.contextFile#XACML_Context|org.eventb.core.axiom#0"/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="condition∈RULE → (SUBJECT × RESOURCE × ACTION × ENVIRONMENT → BOOL)" org.eventb.core.source="/XACML2Event-B/XACML_Context.buc|org.eventb.core.contextFile#XACML_Context|org.eventb.core.axiom#1"/>
+        <org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="effect∈RULE → DECISION" org.eventb.core.source="/XACML2Event-B/XACML_Context.buc|org.eventb.core.contextFile#XACML_Context|org.eventb.core.axiom#2"/>
+        <org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="partition(DECISION,{Permit},{Deny},{NotApplicable})" org.eventb.core.source="/XACML2Event-B/XACML_Context.buc|org.eventb.core.contextFile#XACML_Context|org.eventb.core.axiom#3"/>
+        <org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="NotApplicable∉ran(effect)" org.eventb.core.source="/XACML2Event-B/XACML_Context.buc|org.eventb.core.contextFile#XACML_Context|org.eventb.core.axiom#7"/>
+    </org.eventb.core.poPredicateSet>
+</org.eventb.core.poFile>

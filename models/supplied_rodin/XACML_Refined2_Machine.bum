@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.machineFile org.eventb.core.configuration="org.eventb.core.fwd" version="5">
+    <org.eventb.core.event name="'" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="INITIALISATION"/>
+    <org.eventb.core.seesContext name="(" org.eventb.core.target="XACML_Refined1_Context"/>
+    <org.eventb.core.refinesMachine name=")" org.eventb.core.target="XACML_Refined1_Machine"/>
+    <org.eventb.core.variable name="*" org.eventb.core.identifier="current_request"/>
+    <org.eventb.core.variable name="+" org.eventb.core.identifier="decision"/>
+    <org.eventb.core.variable name="," org.eventb.core.identifier="applicable_rules"/>
+    <org.eventb.core.variable name="-" org.eventb.core.identifier="applicable_policies"/>
+    <org.eventb.core.variable name="." org.eventb.core.identifier="applicable_policy_sets"/>
+    <org.eventb.core.invariant name="/" org.eventb.core.label="inv1" org.eventb.core.predicate="decision = Permit ⇒&#13;&#10;    (∃pol,r·&#13;&#10;        pol ∈ applicable_policies ∧&#13;&#10;        r ∈ applicable_rules ∧&#13;&#10;        r ∈ policies(pol) ∧&#13;&#10;        effect(r) = Permit)"/>
+    <org.eventb.core.invariant name="0" org.eventb.core.label="inv2" org.eventb.core.predicate="decision = Deny ⇒&#13;&#10;    (∃pol,r·&#13;&#10;        pol ∈ applicable_policies ∧&#13;&#10;        r ∈ applicable_rules ∧&#13;&#10;        r ∈ policies(pol) ∧&#13;&#10;        effect(r) = Deny)&#13;&#10;"/>
+    <org.eventb.core.variable name="2" org.eventb.core.identifier="env"/>
+    <org.eventb.core.event name="3" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="EvaluateRequest">
+        <org.eventb.core.refinesEvent name="'" org.eventb.core.target="EvaluateRequest "/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="4" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="Combine_PermitOverrides_Permit ">
+        <org.eventb.core.refinesEvent name="'" org.eventb.core.target="Combine_PermitOverrides_Permit"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="5" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="Combine_PermitOverrides_Deny">
+        <org.eventb.core.refinesEvent name="'" org.eventb.core.target="Combine_PermitOverrides_Deny"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="6" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="Combine_PermitOverrides_NotApplicable">
+        <org.eventb.core.refinesEvent name="(" org.eventb.core.target=" Combine_PermitOverrides_NotApplicable"/>
+    </org.eventb.core.event>
+    <org.eventb.core.invariant name="7" org.eventb.core.label="inv3" org.eventb.core.predicate="applicable_rules = ∅ ⇒&#13;&#10;    decision = NotApplicable"/>
+    <org.eventb.core.event name="8" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="Combine_DenyOverrides_Deny">
+        <org.eventb.core.refinesEvent name="'" org.eventb.core.target="Combine_DenyOverrides_Deny"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="9" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="Combine_DenyOverrides_Permit">
+        <org.eventb.core.refinesEvent name="'" org.eventb.core.target="Combine_DenyOverrides_Permit"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name=":" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="Combine_DenyOverrides_NotApplicable">
+        <org.eventb.core.refinesEvent name="'" org.eventb.core.target="Combine_DenyOverrides_NotApplicable"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name=";" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="ApplyCombining_FirstApplicable">
+        <org.eventb.core.refinesEvent name="'" org.eventb.core.target="ApplyCombining_FirstApplicable"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="=" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="Combine_FirstApplicable_NotApplicable">
+        <org.eventb.core.refinesEvent name="'" org.eventb.core.target="Combine_FirstApplicable_NotApplicable"/>
+    </org.eventb.core.event>
+</org.eventb.core.machineFile>

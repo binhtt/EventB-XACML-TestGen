@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.contextFile org.eventb.core.configuration="org.eventb.core.fwd" version="3">
+    <org.eventb.core.carrierSet name="'" org.eventb.core.identifier="SUBJECT"/>
+    <org.eventb.core.carrierSet name="(" org.eventb.core.identifier="RESOURCE"/>
+    <org.eventb.core.carrierSet name=")" org.eventb.core.identifier="ACTION"/>
+    <org.eventb.core.carrierSet name="*" org.eventb.core.identifier="ENVIRONMENT"/>
+    <org.eventb.core.carrierSet name="+" org.eventb.core.identifier="RULE"/>
+    <org.eventb.core.carrierSet name="," org.eventb.core.identifier="DECISION"/>
+    <org.eventb.core.constant name="-" org.eventb.core.identifier="target"/>
+    <org.eventb.core.constant name="." org.eventb.core.identifier="condition"/>
+    <org.eventb.core.constant name="/" org.eventb.core.identifier="effect"/>
+    <org.eventb.core.axiom name="0" org.eventb.core.label="axm1" org.eventb.core.predicate="target ∈ RULE → ℙ(SUBJECT × RESOURCE × ACTION × ENVIRONMENT)"/>
+    <org.eventb.core.axiom name="1" org.eventb.core.label="axm2" org.eventb.core.predicate="condition ∈ RULE → (SUBJECT × RESOURCE × ACTION × ENVIRONMENT → BOOL)"/>
+    <org.eventb.core.axiom name="2" org.eventb.core.label="axm3" org.eventb.core.predicate="effect ∈ RULE → DECISION"/>
+    <org.eventb.core.axiom name="3" org.eventb.core.label="axm4" org.eventb.core.predicate="partition(DECISION, {Permit}, {Deny}, {NotApplicable})"/>
+    <org.eventb.core.constant name="4" org.eventb.core.identifier="Permit"/>
+    <org.eventb.core.constant name="5" org.eventb.core.identifier="Deny"/>
+    <org.eventb.core.constant name="6" org.eventb.core.identifier="NotApplicable"/>
+    <org.eventb.core.axiom name="7" org.eventb.core.label="axm5" org.eventb.core.predicate="NotApplicable ∉ ran(effect)"/>
+</org.eventb.core.contextFile>

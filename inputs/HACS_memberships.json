@@ -1,0 +1,174 @@
+{
+  "HACS": [
+    {
+      "policy_id": "HACS_POLICY_1",
+      "rules_included": [
+        "HACS_01",
+        "HACS_02",
+        "HACS_03"
+      ],
+      "xacml_policy": "<Policy PolicyId='HACS_POLICY_1'>...XACML content including rules HACS_01, HACS_02, HACS_03...</Policy>"
+    },
+    {
+      "policy_id": "HACS_POLICY_2",
+      "rules_included": [
+        "HACS_04",
+        "HACS_05",
+        "HACS_06"
+      ],
+      "xacml_policy": "<Policy PolicyId='HACS_POLICY_2'>...XACML content including rules HACS_04, HACS_05, HACS_06...</Policy>"
+    },
+    {
+      "policy_id": "HACS_POLICY_3",
+      "rules_included": [
+        "HACS_07",
+        "HACS_08",
+        "HACS_09"
+      ],
+      "xacml_policy": "<Policy PolicyId='HACS_POLICY_3'>...XACML content including rules HACS_07, HACS_08, HACS_09...</Policy>"
+    },
+    {
+      "policy_id": "HACS_POLICY_4",
+      "rules_included": [
+        "HACS_10",
+        "HACS_11",
+        "HACS_12"
+      ],
+      "xacml_policy": "<Policy PolicyId='HACS_POLICY_4'>...XACML content including rules HACS_10, HACS_11, HACS_12...</Policy>"
+    },
+    {
+      "policy_id": "HACS_POLICY_5",
+      "rules_included": [
+        "HACS_13",
+        "HACS_14",
+        "HACS_15"
+      ],
+      "xacml_policy": "<Policy PolicyId='HACS_POLICY_5'>...XACML content including rules HACS_13, HACS_14, HACS_15...</Policy>"
+    },
+    {
+      "policy_id": "HACS_POLICY_6",
+      "rules_included": [
+        "HACS_16",
+        "HACS_17",
+        "HACS_18"
+      ],
+      "xacml_policy": "<Policy PolicyId='HACS_POLICY_6'>...XACML content including rules HACS_16, HACS_17, HACS_18...</Policy>"
+    },
+    {
+      "policy_id": "HACS_POLICY_7",
+      "rules_included": [
+        "HACS_19",
+        "HACS_20",
+        "HACS_21"
+      ],
+      "xacml_policy": "<Policy PolicyId='HACS_POLICY_7'>...XACML content including rules HACS_19, HACS_20, HACS_21...</Policy>"
+    },
+    {
+      "policy_id": "HACS_POLICY_8",
+      "rules_included": [
+        "HACS_22",
+        "HACS_23",
+        "HACS_24"
+      ],
+      "xacml_policy": "<Policy PolicyId='HACS_POLICY_8'>...XACML content including rules HACS_22, HACS_23, HACS_24...</Policy>"
+    },
+    {
+      "policy_id": "HACS_POLICY_9",
+      "rules_included": [
+        "HACS_25",
+        "HACS_26",
+        "HACS_27"
+      ],
+      "xacml_policy": "<Policy PolicyId='HACS_POLICY_9'>...XACML content including rules HACS_25, HACS_26, HACS_27...</Policy>"
+    },
+    {
+      "policy_id": "HACS_POLICY_10",
+      "rules_included": [
+        "HACS_28",
+        "HACS_29",
+        "HACS_30"
+      ],
+      "xacml_policy": "<Policy PolicyId='HACS_POLICY_10'>...XACML content including rules HACS_28, HACS_29, HACS_30...</Policy>"
+    },
+    {
+      "policy_id": "HACS_POLICY_11",
+      "rules_included": [
+        "HACS_31",
+        "HACS_32"
+      ],
+      "xacml_policy": "<Policy PolicyId='HACS_POLICY_11'>...XACML content including rules HACS_31, HACS_32...</Policy>"
+    },
+    {
+      "policy_id": "HACS_POLICY_12",
+      "rules_included": [
+        "HACS_33",
+        "HACS_34"
+      ],
+      "xacml_policy": "<Policy PolicyId='HACS_POLICY_12'>...XACML content including rules HACS_33, HACS_34...</Policy>"
+    },
+    {
+      "policy_id": "HACS_POLICY_13",
+      "rules_included": [
+        "HACS_35",
+        "HACS_36"
+      ],
+      "xacml_policy": "<Policy PolicyId='HACS_POLICY_13'>...XACML content including rules HACS_35, HACS_36...</Policy>"
+    },
+    {
+      "policy_id": "HACS_POLICY_14",
+      "rules_included": [
+        "HACS_37",
+        "HACS_38"
+      ],
+      "xacml_policy": "<Policy PolicyId='HACS_POLICY_14'>...XACML content including rules HACS_37, HACS_38...</Policy>"
+    },
+    {
+      "policy_id": "HACS_POLICY_15",
+      "rules_included": [
+        "HACS_39",
+        "HACS_40"
+      ],
+      "xacml_policy": "<Policy PolicyId='HACS_POLICY_15'>...XACML content including rules HACS_39, HACS_40...</Policy>"
+    },
+    {
+      "policy_id": "HACS_POLICY_16",
+      "rules_included": [
+        "HACS_41",
+        "HACS_42"
+      ],
+      "xacml_policy": "<Policy PolicyId='HACS_POLICY_16'>...XACML content including rules HACS_41, HACS_42...</Policy>"
+    },
+    {
+      "policy_id": "HACS_POLICY_17",
+      "rules_included": [
+        "HACS_43",
+        "HACS_44"
+      ],
+      "xacml_policy": "<Policy PolicyId='HACS_POLICY_17'>...XACML content including rules HACS_43, HACS_44...</Policy>"
+    },
+    {
+      "policy_id": "HACS_POLICY_18",
+      "rules_included": [
+        "HACS_45",
+        "HACS_46"
+      ],
+      "xacml_policy": "<Policy PolicyId='HACS_POLICY_18'>...XACML content including rules HACS_45, HACS_46...</Policy>"
+    },
+    {
+      "policy_id": "HACS_POLICY_19",
+      "rules_included": [
+        "HACS_47",
+        "HACS_48"
+      ],
+      "xacml_policy": "<Policy PolicyId='HACS_POLICY_19'>...XACML content including rules HACS_47, HACS_48...</Policy>"
+    },
+    {
+      "policy_id": "HACS_POLICY_20",
+      "rules_included": [
+        "HACS_49",
+        "HACS_50"
+      ],
+      "xacml_policy": "<Policy PolicyId='HACS_POLICY_20'>...XACML content including rules HACS_49, HACS_50...</Policy>"
+    }
+  ]
+}

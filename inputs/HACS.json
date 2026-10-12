@@ -1,0 +1,254 @@
+{
+  "HACS": [
+    {
+      "rule_id": "HACS_01",
+      "text_rule": "Permit read access to File_01 for role Admin_1",
+      "xacml_policy": "<PolicyRule RuleId='HACS_01' Effect='Permit'><Target><Subjects><Subject>Admin_1</Subject></Subjects><Resources><Resource>File_01</Resource></Resources><Actions><Action>read</Action></Actions></Target></PolicyRule>"
+    },
+    {
+      "rule_id": "HACS_02",
+      "text_rule": "Deny write access to File_02 for role Admin_2",
+      "xacml_policy": "<PolicyRule RuleId='HACS_02' Effect='Deny'><Target><Subjects><Subject>Admin_2</Subject></Subjects><Resources><Resource>File_02</Resource></Resources><Actions><Action>write</Action></Actions></Target></PolicyRule>"
+    },
+    {
+      "rule_id": "HACS_03",
+      "text_rule": "Permit delete access to File_03 for role Admin_3",
+      "xacml_policy": "<PolicyRule RuleId='HACS_03' Effect='Permit'><Target><Subjects><Subject>Admin_3</Subject></Subjects><Resources><Resource>File_03</Resource></Resources><Actions><Action>delete</Action></Actions></Target></PolicyRule>"
+    },
+    {
+      "rule_id": "HACS_04",
+      "text_rule": "Deny execute access to File_04 for role Admin_4",
+      "xacml_policy": "<PolicyRule RuleId='HACS_04' Effect='Deny'><Target><Subjects><Subject>Admin_4</Subject></Subjects><Resources><Resource>File_04</Resource></Resources><Actions><Action>execute</Action></Actions></Target></PolicyRule>"
+    },
+    {
+      "rule_id": "HACS_05",
+      "text_rule": "Permit read access to File_05 for role Admin_5",
+      "xacml_policy": "<PolicyRule RuleId='HACS_05' Effect='Permit'><Target><Subjects><Subject>Admin_5</Subject></Subjects><Resources><Resource>File_05</Resource></Resources><Actions><Action>read</Action></Actions></Target></PolicyRule>"
+    },
+    {
+      "rule_id": "HACS_06",
+      "text_rule": "Deny write access to File_06 for role Admin_6",
+      "xacml_policy": "<PolicyRule RuleId='HACS_06' Effect='Deny'><Target><Subjects><Subject>Admin_6</Subject></Subjects><Resources><Resource>File_06</Resource></Resources><Actions><Action>write</Action></Actions></Target></PolicyRule>"
+    },
+    {
+      "rule_id": "HACS_07",
+      "text_rule": "Permit delete access to File_07 for role Admin_7",
+      "xacml_policy": "<PolicyRule RuleId='HACS_07' Effect='Permit'><Target><Subjects><Subject>Admin_7</Subject></Subjects><Resources><Resource>File_07</Resource></Resources><Actions><Action>delete</Action></Actions></Target></PolicyRule>"
+    },
+    {
+      "rule_id": "HACS_08",
+      "text_rule": "Deny execute access to File_08 for role Admin_8",
+      "xacml_policy": "<PolicyRule RuleId='HACS_08' Effect='Deny'><Target><Subjects><Subject>Admin_8</Subject></Subjects><Resources><Resource>File_08</Resource></Resources><Actions><Action>execute</Action></Actions></Target></PolicyRule>"
+    },
+    {
+      "rule_id": "HACS_09",
+      "text_rule": "Permit read access to File_09 for role Admin_9",
+      "xacml_policy": "<PolicyRule RuleId='HACS_09' Effect='Permit'><Target><Subjects><Subject>Admin_9</Subject></Subjects><Resources><Resource>File_09</Resource></Resources><Actions><Action>read</Action></Actions></Target></PolicyRule>"
+    },
+    {
+      "rule_id": "HACS_10",
+      "text_rule": "Deny write access to File_10 for role Admin_10",
+      "xacml_policy": "<PolicyRule RuleId='HACS_10' Effect='Deny'><Target><Subjects><Subject>Admin_10</Subject></Subjects><Resources><Resource>File_10</Resource></Resources><Actions><Action>write</Action></Actions></Target></PolicyRule>"
+    },
+    {
+      "rule_id": "HACS_11",
+      "text_rule": "Permit delete access to File_11 for role Admin_11",
+      "xacml_policy": "<PolicyRule RuleId='HACS_11' Effect='Permit'><Target><Subjects><Subject>Admin_11</Subject></Subjects><Resources><Resource>File_11</Resource></Resources><Actions><Action>delete</Action></Actions></Target></PolicyRule>"
+    },
+    {
+      "rule_id": "HACS_12",
+      "text_rule": "Deny execute access to File_12 for role Admin_12",
+      "xacml_policy": "<PolicyRule RuleId='HACS_12' Effect='Deny'><Target><Subjects><Subject>Admin_12</Subject></Subjects><Resources><Resource>File_12</Resource></Resources><Actions><Action>execute</Action></Actions></Target></PolicyRule>"
+    },
+    {
+      "rule_id": "HACS_13",
+      "text_rule": "Permit read access to File_13 for role Admin_13",
+      "xacml_policy": "<PolicyRule RuleId='HACS_13' Effect='Permit'><Target><Subjects><Subject>Admin_13</Subject></Subjects><Resources><Resource>File_13</Resource></Resources><Actions><Action>read</Action></Actions></Target></PolicyRule>"
+    },
+    {
+      "rule_id": "HACS_14",
+      "text_rule": "Deny write access to File_14 for role Admin_14",
+      "xacml_policy": "<PolicyRule RuleId='HACS_14' Effect='Deny'><Target><Subjects><Subject>Admin_14</Subject></Subjects><Resources><Resource>File_14</Resource></Resources><Actions><Action>write</Action></Actions></Target></PolicyRule>"
+    },
+    {
+      "rule_id": "HACS_15",
+      "text_rule": "Permit delete access to File_15 for role Admin_15",
+      "xacml_policy": "<PolicyRule RuleId='HACS_15' Effect='Permit'><Target><Subjects><Subject>Admin_15</Subject></Subjects><Resources><Resource>File_15</Resource></Resources><Actions><Action>delete</Action></Actions></Target></PolicyRule>"
+    },
+    {
+      "rule_id": "HACS_16",
+      "text_rule": "Deny execute access to File_16 for role Admin_16",
+      "xacml_policy": "<PolicyRule RuleId='HACS_16' Effect='Deny'><Target><Subjects><Subject>Admin_16</Subject></Subjects><Resources><Resource>File_16</Resource></Resources><Actions><Action>execute</Action></Actions></Target></PolicyRule>"
+    },
+    {
+      "rule_id": "HACS_17",
+      "text_rule": "Permit read access to File_17 for role Admin_17",
+      "xacml_policy": "<PolicyRule RuleId='HACS_17' Effect='Permit'><Target><Subjects><Subject>Admin_17</Subject></Subjects><Resources><Resource>File_17</Resource></Resources><Actions><Action>read</Action></Actions></Target></PolicyRule>"
+    },
+    {
+      "rule_id": "HACS_18",
+      "text_rule": "Deny write access to File_18 for role Admin_18",
+      "xacml_policy": "<PolicyRule RuleId='HACS_18' Effect='Deny'><Target><Subjects><Subject>Admin_18</Subject></Subjects><Resources><Resource>File_18</Resource></Resources><Actions><Action>write</Action></Actions></Target></PolicyRule>"
+    },
+    {
+      "rule_id": "HACS_19",
+      "text_rule": "Permit delete access to File_19 for role Admin_19",
+      "xacml_policy": "<PolicyRule RuleId='HACS_19' Effect='Permit'><Target><Subjects><Subject>Admin_19</Subject></Subjects><Resources><Resource>File_19</Resource></Resources><Actions><Action>delete</Action></Actions></Target></PolicyRule>"
+    },
+    {
+      "rule_id": "HACS_20",
+      "text_rule": "Deny execute access to File_20 for role Admin_20",
+      "xacml_policy": "<PolicyRule RuleId='HACS_20' Effect='Deny'><Target><Subjects><Subject>Admin_20</Subject></Subjects><Resources><Resource>File_20</Resource></Resources><Actions><Action>execute</Action></Actions></Target></PolicyRule>"
+    },
+    {
+      "rule_id": "HACS_21",
+      "text_rule": "Permit read access to File_21 for role Admin_21",
+      "xacml_policy": "<PolicyRule RuleId='HACS_21' Effect='Permit'><Target><Subjects><Subject>Admin_21</Subject></Subjects><Resources><Resource>File_21</Resource></Resources><Actions><Action>read</Action></Actions></Target></PolicyRule>"
+    },
+    {
+      "rule_id": "HACS_22",
+      "text_rule": "Deny write access to File_22 for role Admin_22",
+      "xacml_policy": "<PolicyRule RuleId='HACS_22' Effect='Deny'><Target><Subjects><Subject>Admin_22</Subject></Subjects><Resources><Resource>File_22</Resource></Resources><Actions><Action>write</Action></Actions></Target></PolicyRule>"
+    },
+    {
+      "rule_id": "HACS_23",
+      "text_rule": "Permit delete access to File_23 for role Admin_23",
+      "xacml_policy": "<PolicyRule RuleId='HACS_23' Effect='Permit'><Target><Subjects><Subject>Admin_23</Subject></Subjects><Resources><Resource>File_23</Resource></Resources><Actions><Action>delete</Action></Actions></Target></PolicyRule>"
+    },
+    {
+      "rule_id": "HACS_24",
+      "text_rule": "Deny execute access to File_24 for role Admin_24",
+      "xacml_policy": "<PolicyRule RuleId='HACS_24' Effect='Deny'><Target><Subjects><Subject>Admin_24</Subject></Subjects><Resources><Resource>File_24</Resource></Resources><Actions><Action>execute</Action></Actions></Target></PolicyRule>"
+    },
+    {
+      "rule_id": "HACS_25",
+      "text_rule": "Permit read access to File_25 for role Admin_25",
+      "xacml_policy": "<PolicyRule RuleId='HACS_25' Effect='Permit'><Target><Subjects><Subject>Admin_25</Subject></Subjects><Resources><Resource>File_25</Resource></Resources><Actions><Action>read</Action></Actions></Target></PolicyRule>"
+    },
+    {
+      "rule_id": "HACS_26",
+      "text_rule": "Deny write access to File_26 for role Admin_26",
+      "xacml_policy": "<PolicyRule RuleId='HACS_26' Effect='Deny'><Target><Subjects><Subject>Admin_26</Subject></Subjects><Resources><Resource>File_26</Resource></Resources><Actions><Action>write</Action></Actions></Target></PolicyRule>"
+    },
+    {
+      "rule_id": "HACS_27",
+      "text_rule": "Permit delete access to File_27 for role Admin_27",
+      "xacml_policy": "<PolicyRule RuleId='HACS_27' Effect='Permit'><Target><Subjects><Subject>Admin_27</Subject></Subjects><Resources><Resource>File_27</Resource></Resources><Actions><Action>delete</Action></Actions></Target></PolicyRule>"
+    },
+    {
+      "rule_id": "HACS_28",
+      "text_rule": "Deny execute access to File_28 for role Admin_28",
+      "xacml_policy": "<PolicyRule RuleId='HACS_28' Effect='Deny'><Target><Subjects><Subject>Admin_28</Subject></Subjects><Resources><Resource>File_28</Resource></Resources><Actions><Action>execute</Action></Actions></Target></PolicyRule>"
+    },
+    {
+      "rule_id": "HACS_29",
+      "text_rule": "Permit read access to File_29 for role Admin_29",
+      "xacml_policy": "<PolicyRule RuleId='HACS_29' Effect='Permit'><Target><Subjects><Subject>Admin_29</Subject></Subjects><Resources><Resource>File_29</Resource></Resources><Actions><Action>read</Action></Actions></Target></PolicyRule>"
+    },
+    {
+      "rule_id": "HACS_30",
+      "text_rule": "Deny write access to File_30 for role Admin_30",
+      "xacml_policy": "<PolicyRule RuleId='HACS_30' Effect='Deny'><Target><Subjects><Subject>Admin_30</Subject></Subjects><Resources><Resource>File_30</Resource></Resources><Actions><Action>write</Action></Actions></Target></PolicyRule>"
+    },
+    {
+      "rule_id": "HACS_31",
+      "text_rule": "Permit delete access to File_31 for role Admin_31",
+      "xacml_policy": "<PolicyRule RuleId='HACS_31' Effect='Permit'><Target><Subjects><Subject>Admin_31</Subject></Subjects><Resources><Resource>File_31</Resource></Resources><Actions><Action>delete</Action></Actions></Target></PolicyRule>"
+    },
+    {
+      "rule_id": "HACS_32",
+      "text_rule": "Deny execute access to File_32 for role Admin_32",
+      "xacml_policy": "<PolicyRule RuleId='HACS_32' Effect='Deny'><Target><Subjects><Subject>Admin_32</Subject></Subjects><Resources><Resource>File_32</Resource></Resources><Actions><Action>execute</Action></Actions></Target></PolicyRule>"
+    },
+    {
+      "rule_id": "HACS_33",
+      "text_rule": "Permit read access to File_33 for role Admin_33",
+      "xacml_policy": "<PolicyRule RuleId='HACS_33' Effect='Permit'><Target><Subjects><Subject>Admin_33</Subject></Subjects><Resources><Resource>File_33</Resource></Resources><Actions><Action>read</Action></Actions></Target></PolicyRule>"
+    },
+    {
+      "rule_id": "HACS_34",
+      "text_rule": "Deny write access to File_34 for role Admin_34",
+      "xacml_policy": "<PolicyRule RuleId='HACS_34' Effect='Deny'><Target><Subjects><Subject>Admin_34</Subject></Subjects><Resources><Resource>File_34</Resource></Resources><Actions><Action>write</Action></Actions></Target></PolicyRule>"
+    },
+    {
+      "rule_id": "HACS_35",
+      "text_rule": "Permit delete access to File_35 for role Admin_35",
+      "xacml_policy": "<PolicyRule RuleId='HACS_35' Effect='Permit'><Target><Subjects><Subject>Admin_35</Subject></Subjects><Resources><Resource>File_35</Resource></Resources><Actions><Action>delete</Action></Actions></Target></PolicyRule>"
+    },
+    {
+      "rule_id": "HACS_36",
+      "text_rule": "Deny execute access to File_36 for role Admin_36",
+      "xacml_policy": "<PolicyRule RuleId='HACS_36' Effect='Deny'><Target><Subjects><Subject>Admin_36</Subject></Subjects><Resources><Resource>File_36</Resource></Resources><Actions><Action>execute</Action></Actions></Target></PolicyRule>"
+    },
+    {
+      "rule_id": "HACS_37",
+      "text_rule": "Permit read access to File_37 for role Admin_37",
+      "xacml_policy": "<PolicyRule RuleId='HACS_37' Effect='Permit'><Target><Subjects><Subject>Admin_37</Subject></Subjects><Resources><Resource>File_37</Resource></Resources><Actions><Action>read</Action></Actions></Target></PolicyRule>"
+    },
+    {
+      "rule_id": "HACS_38",
+      "text_rule": "Deny write access to File_38 for role Admin_38",
+      "xacml_policy": "<PolicyRule RuleId='HACS_38' Effect='Deny'><Target><Subjects><Subject>Admin_38</Subject></Subjects><Resources><Resource>File_38</Resource></Resources><Actions><Action>write</Action></Actions></Target></PolicyRule>"
+    },
+    {
+      "rule_id": "HACS_39",
+      "text_rule": "Permit delete access to File_39 for role Admin_39",
+      "xacml_policy": "<PolicyRule RuleId='HACS_39' Effect='Permit'><Target><Subjects><Subject>Admin_39</Subject></Subjects><Resources><Resource>File_39</Resource></Resources><Actions><Action>delete</Action></Actions></Target></PolicyRule>"
+    },
+    {
+      "rule_id": "HACS_40",
+      "text_rule": "Deny execute access to File_40 for role Admin_40",
+      "xacml_policy": "<PolicyRule RuleId='HACS_40' Effect='Deny'><Target><Subjects><Subject>Admin_40</Subject></Subjects><Resources><Resource>File_40</Resource></Resources><Actions><Action>execute</Action></Actions></Target></PolicyRule>"
+    },
+    {
+      "rule_id": "HACS_41",
+      "text_rule": "Permit read access to File_41 for role Admin_41",
+      "xacml_policy": "<PolicyRule RuleId='HACS_41' Effect='Permit'><Target><Subjects><Subject>Admin_41</Subject></Subjects><Resources><Resource>File_41</Resource></Resources><Actions><Action>read</Action></Actions></Target></PolicyRule>"
+    },
+    {
+      "rule_id": "HACS_42",
+      "text_rule": "Deny write access to File_42 for role Admin_42",
+      "xacml_policy": "<PolicyRule RuleId='HACS_42' Effect='Deny'><Target><Subjects><Subject>Admin_42</Subject></Subjects><Resources><Resource>File_42</Resource></Resources><Actions><Action>write</Action></Actions></Target></PolicyRule>"
+    },
+    {
+      "rule_id": "HACS_43",
+      "text_rule": "Permit delete access to File_43 for role Admin_43",
+      "xacml_policy": "<PolicyRule RuleId='HACS_43' Effect='Permit'><Target><Subjects><Subject>Admin_43</Subject></Subjects><Resources><Resource>File_43</Resource></Resources><Actions><Action>delete</Action></Actions></Target></PolicyRule>"
+    },
+    {
+      "rule_id": "HACS_44",
+      "text_rule": "Deny execute access to File_44 for role Admin_44",
+      "xacml_policy": "<PolicyRule RuleId='HACS_44' Effect='Deny'><Target><Subjects><Subject>Admin_44</Subject></Subjects><Resources><Resource>File_44</Resource></Resources><Actions><Action>execute</Action></Actions></Target></PolicyRule>"
+    },
+    {
+      "rule_id": "HACS_45",
+      "text_rule": "Permit read access to File_45 for role Admin_45",
+      "xacml_policy": "<PolicyRule RuleId='HACS_45' Effect='Permit'><Target><Subjects><Subject>Admin_45</Subject></Subjects><Resources><Resource>File_45</Resource></Resources><Actions><Action>read</Action></Actions></Target></PolicyRule>"
+    },
+    {
+      "rule_id": "HACS_46",
+      "text_rule": "Deny write access to File_46 for role Admin_46",
+      "xacml_policy": "<PolicyRule RuleId='HACS_46' Effect='Deny'><Target><Subjects><Subject>Admin_46</Subject></Subjects><Resources><Resource>File_46</Resource></Resources><Actions><Action>write</Action></Actions></Target></PolicyRule>"
+    },
+    {
+      "rule_id": "HACS_47",
+      "text_rule": "Permit delete access to File_47 for role Admin_47",
+      "xacml_policy": "<PolicyRule RuleId='HACS_47' Effect='Permit'><Target><Subjects><Subject>Admin_47</Subject></Subjects><Resources><Resource>File_47</Resource></Resources><Actions><Action>delete</Action></Actions></Target></PolicyRule>"
+    },
+    {
+      "rule_id": "HACS_48",
+      "text_rule": "Deny execute access to File_48 for role Admin_48",
+      "xacml_policy": "<PolicyRule RuleId='HACS_48' Effect='Deny'><Target><Subjects><Subject>Admin_48</Subject></Subjects><Resources><Resource>File_48</Resource></Resources><Actions><Action>execute</Action></Actions></Target></PolicyRule>"
+    },
+    {
+      "rule_id": "HACS_49",
+      "text_rule": "Permit read access to File_49 for role Admin_49",
+      "xacml_policy": "<PolicyRule RuleId='HACS_49' Effect='Permit'><Target><Subjects><Subject>Admin_49</Subject></Subjects><Resources><Resource>File_49</Resource></Resources><Actions><Action>read</Action></Actions></Target></PolicyRule>"
+    },
+    {
+      "rule_id": "HACS_50",
+      "text_rule": "Deny write access to File_50 for role Admin_50",
+      "xacml_policy": "<PolicyRule RuleId='HACS_50' Effect='Deny'><Target><Subjects><Subject>Admin_50</Subject></Subjects><Resources><Resource>File_50</Resource></Resources><Actions><Action>write</Action></Actions></Target></PolicyRule>"
+    }
+  ]
+}

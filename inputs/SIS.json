@@ -1,0 +1,204 @@
+{
+  "SIS": [
+    {
+      "rule_id": "SIS_01",
+      "text_rule": "Permit view access to Grades_01 for role Teacher_1",
+      "xacml_policy": "<PolicyRule RuleId='SIS_01' Effect='Permit'><Target><Subjects><Subject>Teacher_1</Subject></Subjects><Resources><Resource>Grades_01</Resource></Resources><Actions><Action>view</Action></Actions></Target></PolicyRule>"
+    },
+    {
+      "rule_id": "SIS_02",
+      "text_rule": "Deny modify access to Grades_02 for role Teacher_2",
+      "xacml_policy": "<PolicyRule RuleId='SIS_02' Effect='Deny'><Target><Subjects><Subject>Teacher_2</Subject></Subjects><Resources><Resource>Grades_02</Resource></Resources><Actions><Action>modify</Action></Actions></Target></PolicyRule>"
+    },
+    {
+      "rule_id": "SIS_03",
+      "text_rule": "Permit view access to Grades_03 for role Teacher_3",
+      "xacml_policy": "<PolicyRule RuleId='SIS_03' Effect='Permit'><Target><Subjects><Subject>Teacher_3</Subject></Subjects><Resources><Resource>Grades_03</Resource></Resources><Actions><Action>view</Action></Actions></Target></PolicyRule>"
+    },
+    {
+      "rule_id": "SIS_04",
+      "text_rule": "Deny modify access to Grades_04 for role Teacher_4",
+      "xacml_policy": "<PolicyRule RuleId='SIS_04' Effect='Deny'><Target><Subjects><Subject>Teacher_4</Subject></Subjects><Resources><Resource>Grades_04</Resource></Resources><Actions><Action>modify</Action></Actions></Target></PolicyRule>"
+    },
+    {
+      "rule_id": "SIS_05",
+      "text_rule": "Permit view access to Grades_05 for role Teacher_5",
+      "xacml_policy": "<PolicyRule RuleId='SIS_05' Effect='Permit'><Target><Subjects><Subject>Teacher_5</Subject></Subjects><Resources><Resource>Grades_05</Resource></Resources><Actions><Action>view</Action></Actions></Target></PolicyRule>"
+    },
+    {
+      "rule_id": "SIS_06",
+      "text_rule": "Deny modify access to Grades_06 for role Teacher_6",
+      "xacml_policy": "<PolicyRule RuleId='SIS_06' Effect='Deny'><Target><Subjects><Subject>Teacher_6</Subject></Subjects><Resources><Resource>Grades_06</Resource></Resources><Actions><Action>modify</Action></Actions></Target></PolicyRule>"
+    },
+    {
+      "rule_id": "SIS_07",
+      "text_rule": "Permit view access to Grades_07 for role Teacher_7",
+      "xacml_policy": "<PolicyRule RuleId='SIS_07' Effect='Permit'><Target><Subjects><Subject>Teacher_7</Subject></Subjects><Resources><Resource>Grades_07</Resource></Resources><Actions><Action>view</Action></Actions></Target></PolicyRule>"
+    },
+    {
+      "rule_id": "SIS_08",
+      "text_rule": "Deny modify access to Grades_08 for role Teacher_8",
+      "xacml_policy": "<PolicyRule RuleId='SIS_08' Effect='Deny'><Target><Subjects><Subject>Teacher_8</Subject></Subjects><Resources><Resource>Grades_08</Resource></Resources><Actions><Action>modify</Action></Actions></Target></PolicyRule>"
+    },
+    {
+      "rule_id": "SIS_09",
+      "text_rule": "Permit view access to Grades_09 for role Teacher_9",
+      "xacml_policy": "<PolicyRule RuleId='SIS_09' Effect='Permit'><Target><Subjects><Subject>Teacher_9</Subject></Subjects><Resources><Resource>Grades_09</Resource></Resources><Actions><Action>view</Action></Actions></Target></PolicyRule>"
+    },
+    {
+      "rule_id": "SIS_10",
+      "text_rule": "Deny modify access to Grades_10 for role Teacher_10",
+      "xacml_policy": "<PolicyRule RuleId='SIS_10' Effect='Deny'><Target><Subjects><Subject>Teacher_10</Subject></Subjects><Resources><Resource>Grades_10</Resource></Resources><Actions><Action>modify</Action></Actions></Target></PolicyRule>"
+    },
+    {
+      "rule_id": "SIS_11",
+      "text_rule": "Permit view access to Grades_11 for role Teacher_11",
+      "xacml_policy": "<PolicyRule RuleId='SIS_11' Effect='Permit'><Target><Subjects><Subject>Teacher_11</Subject></Subjects><Resources><Resource>Grades_11</Resource></Resources><Actions><Action>view</Action></Actions></Target></PolicyRule>"
+    },
+    {
+      "rule_id": "SIS_12",
+      "text_rule": "Deny modify access to Grades_12 for role Teacher_12",
+      "xacml_policy": "<PolicyRule RuleId='SIS_12' Effect='Deny'><Target><Subjects><Subject>Teacher_12</Subject></Subjects><Resources><Resource>Grades_12</Resource></Resources><Actions><Action>modify</Action></Actions></Target></PolicyRule>"
+    },
+    {
+      "rule_id": "SIS_13",
+      "text_rule": "Permit view access to Grades_13 for role Teacher_13",
+      "xacml_policy": "<PolicyRule RuleId='SIS_13' Effect='Permit'><Target><Subjects><Subject>Teacher_13</Subject></Subjects><Resources><Resource>Grades_13</Resource></Resources><Actions><Action>view</Action></Actions></Target></PolicyRule>"
+    },
+    {
+      "rule_id": "SIS_14",
+      "text_rule": "Deny modify access to Grades_14 for role Teacher_14",
+      "xacml_policy": "<PolicyRule RuleId='SIS_14' Effect='Deny'><Target><Subjects><Subject>Teacher_14</Subject></Subjects><Resources><Resource>Grades_14</Resource></Resources><Actions><Action>modify</Action></Actions></Target></PolicyRule>"
+    },
+    {
+      "rule_id": "SIS_15",
+      "text_rule": "Permit view access to Grades_15 for role Teacher_15",
+      "xacml_policy": "<PolicyRule RuleId='SIS_15' Effect='Permit'><Target><Subjects><Subject>Teacher_15</Subject></Subjects><Resources><Resource>Grades_15</Resource></Resources><Actions><Action>view</Action></Actions></Target></PolicyRule>"
+    },
+    {
+      "rule_id": "SIS_16",
+      "text_rule": "Deny modify access to Grades_16 for role Teacher_16",
+      "xacml_policy": "<PolicyRule RuleId='SIS_16' Effect='Deny'><Target><Subjects><Subject>Teacher_16</Subject></Subjects><Resources><Resource>Grades_16</Resource></Resources><Actions><Action>modify</Action></Actions></Target></PolicyRule>"
+    },
+    {
+      "rule_id": "SIS_17",
+      "text_rule": "Permit view access to Grades_17 for role Teacher_17",
+      "xacml_policy": "<PolicyRule RuleId='SIS_17' Effect='Permit'><Target><Subjects><Subject>Teacher_17</Subject></Subjects><Resources><Resource>Grades_17</Resource></Resources><Actions><Action>view</Action></Actions></Target></PolicyRule>"
+    },
+    {
+      "rule_id": "SIS_18",
+      "text_rule": "Deny modify access to Grades_18 for role Teacher_18",
+      "xacml_policy": "<PolicyRule RuleId='SIS_18' Effect='Deny'><Target><Subjects><Subject>Teacher_18</Subject></Subjects><Resources><Resource>Grades_18</Resource></Resources><Actions><Action>modify</Action></Actions></Target></PolicyRule>"
+    },
+    {
+      "rule_id": "SIS_19",
+      "text_rule": "Permit view access to Grades_19 for role Teacher_19",
+      "xacml_policy": "<PolicyRule RuleId='SIS_19' Effect='Permit'><Target><Subjects><Subject>Teacher_19</Subject></Subjects><Resources><Resource>Grades_19</Resource></Resources><Actions><Action>view</Action></Actions></Target></PolicyRule>"
+    },
+    {
+      "rule_id": "SIS_20",
+      "text_rule": "Deny modify access to Grades_20 for role Teacher_20",
+      "xacml_policy": "<PolicyRule RuleId='SIS_20' Effect='Deny'><Target><Subjects><Subject>Teacher_20</Subject></Subjects><Resources><Resource>Grades_20</Resource></Resources><Actions><Action>modify</Action></Actions></Target></PolicyRule>"
+    },
+    {
+      "rule_id": "SIS_21",
+      "text_rule": "Permit view access to Grades_21 for role Teacher_21",
+      "xacml_policy": "<PolicyRule RuleId='SIS_21' Effect='Permit'><Target><Subjects><Subject>Teacher_21</Subject></Subjects><Resources><Resource>Grades_21</Resource></Resources><Actions><Action>view</Action></Actions></Target></PolicyRule>"
+    },
+    {
+      "rule_id": "SIS_22",
+      "text_rule": "Deny modify access to Grades_22 for role Teacher_22",
+      "xacml_policy": "<PolicyRule RuleId='SIS_22' Effect='Deny'><Target><Subjects><Subject>Teacher_22</Subject></Subjects><Resources><Resource>Grades_22</Resource></Resources><Actions><Action>modify</Action></Actions></Target></PolicyRule>"
+    },
+    {
+      "rule_id": "SIS_23",
+      "text_rule": "Permit view access to Grades_23 for role Teacher_23",
+      "xacml_policy": "<PolicyRule RuleId='SIS_23' Effect='Permit'><Target><Subjects><Subject>Teacher_23</Subject></Subjects><Resources><Resource>Grades_23</Resource></Resources><Actions><Action>view</Action></Actions></Target></PolicyRule>"
+    },
+    {
+      "rule_id": "SIS_24",
+      "text_rule": "Deny modify access to Grades_24 for role Teacher_24",
+      "xacml_policy": "<PolicyRule RuleId='SIS_24' Effect='Deny'><Target><Subjects><Subject>Teacher_24</Subject></Subjects><Resources><Resource>Grades_24</Resource></Resources><Actions><Action>modify</Action></Actions></Target></PolicyRule>"
+    },
+    {
+      "rule_id": "SIS_25",
+      "text_rule": "Permit view access to Grades_25 for role Teacher_25",
+      "xacml_policy": "<PolicyRule RuleId='SIS_25' Effect='Permit'><Target><Subjects><Subject>Teacher_25</Subject></Subjects><Resources><Resource>Grades_25</Resource></Resources><Actions><Action>view</Action></Actions></Target></PolicyRule>"
+    },
+    {
+      "rule_id": "SIS_26",
+      "text_rule": "Deny modify access to Grades_26 for role Teacher_26",
+      "xacml_policy": "<PolicyRule RuleId='SIS_26' Effect='Deny'><Target><Subjects><Subject>Teacher_26</Subject></Subjects><Resources><Resource>Grades_26</Resource></Resources><Actions><Action>modify</Action></Actions></Target></PolicyRule>"
+    },
+    {
+      "rule_id": "SIS_27",
+      "text_rule": "Permit view access to Grades_27 for role Teacher_27",
+      "xacml_policy": "<PolicyRule RuleId='SIS_27' Effect='Permit'><Target><Subjects><Subject>Teacher_27</Subject></Subjects><Resources><Resource>Grades_27</Resource></Resources><Actions><Action>view</Action></Actions></Target></PolicyRule>"
+    },
+    {
+      "rule_id": "SIS_28",
+      "text_rule": "Deny modify access to Grades_28 for role Teacher_28",
+      "xacml_policy": "<PolicyRule RuleId='SIS_28' Effect='Deny'><Target><Subjects><Subject>Teacher_28</Subject></Subjects><Resources><Resource>Grades_28</Resource></Resources><Actions><Action>modify</Action></Actions></Target></PolicyRule>"
+    },
+    {
+      "rule_id": "SIS_29",
+      "text_rule": "Permit view access to Grades_29 for role Teacher_29",
+      "xacml_policy": "<PolicyRule RuleId='SIS_29' Effect='Permit'><Target><Subjects><Subject>Teacher_29</Subject></Subjects><Resources><Resource>Grades_29</Resource></Resources><Actions><Action>view</Action></Actions></Target></PolicyRule>"
+    },
+    {
+      "rule_id": "SIS_30",
+      "text_rule": "Deny modify access to Grades_30 for role Teacher_30",
+      "xacml_policy": "<PolicyRule RuleId='SIS_30' Effect='Deny'><Target><Subjects><Subject>Teacher_30</Subject></Subjects><Resources><Resource>Grades_30</Resource></Resources><Actions><Action>modify</Action></Actions></Target></PolicyRule>"
+    },
+    {
+      "rule_id": "SIS_31",
+      "text_rule": "Permit view access to Grades_31 for role Teacher_31",
+      "xacml_policy": "<PolicyRule RuleId='SIS_31' Effect='Permit'><Target><Subjects><Subject>Teacher_31</Subject></Subjects><Resources><Resource>Grades_31</Resource></Resources><Actions><Action>view</Action></Actions></Target></PolicyRule>"
+    },
+    {
+      "rule_id": "SIS_32",
+      "text_rule": "Deny modify access to Grades_32 for role Teacher_32",
+      "xacml_policy": "<PolicyRule RuleId='SIS_32' Effect='Deny'><Target><Subjects><Subject>Teacher_32</Subject></Subjects><Resources><Resource>Grades_32</Resource></Resources><Actions><Action>modify</Action></Actions></Target></PolicyRule>"
+    },
+    {
+      "rule_id": "SIS_33",
+      "text_rule": "Permit view access to Grades_33 for role Teacher_33",
+      "xacml_policy": "<PolicyRule RuleId='SIS_33' Effect='Permit'><Target><Subjects><Subject>Teacher_33</Subject></Subjects><Resources><Resource>Grades_33</Resource></Resources><Actions><Action>view</Action></Actions></Target></PolicyRule>"
+    },
+    {
+      "rule_id": "SIS_34",
+      "text_rule": "Deny modify access to Grades_34 for role Teacher_34",
+      "xacml_policy": "<PolicyRule RuleId='SIS_34' Effect='Deny'><Target><Subjects><Subject>Teacher_34</Subject></Subjects><Resources><Resource>Grades_34</Resource></Resources><Actions><Action>modify</Action></Actions></Target></PolicyRule>"
+    },
+    {
+      "rule_id": "SIS_35",
+      "text_rule": "Permit view access to Grades_35 for role Teacher_35",
+      "xacml_policy": "<PolicyRule RuleId='SIS_35' Effect='Permit'><Target><Subjects><Subject>Teacher_35</Subject></Subjects><Resources><Resource>Grades_35</Resource></Resources><Actions><Action>view</Action></Actions></Target></PolicyRule>"
+    },
+    {
+      "rule_id": "SIS_36",
+      "text_rule": "Deny modify access to Grades_36 for role Teacher_36",
+      "xacml_policy": "<PolicyRule RuleId='SIS_36' Effect='Deny'><Target><Subjects><Subject>Teacher_36</Subject></Subjects><Resources><Resource>Grades_36</Resource></Resources><Actions><Action>modify</Action></Actions></Target></PolicyRule>"
+    },
+    {
+      "rule_id": "SIS_37",
+      "text_rule": "Permit view access to Grades_37 for role Teacher_37",
+      "xacml_policy": "<PolicyRule RuleId='SIS_37' Effect='Permit'><Target><Subjects><Subject>Teacher_37</Subject></Subjects><Resources><Resource>Grades_37</Resource></Resources><Actions><Action>view</Action></Actions></Target></PolicyRule>"
+    },
+    {
+      "rule_id": "SIS_38",
+      "text_rule": "Deny modify access to Grades_38 for role Teacher_38",
+      "xacml_policy": "<PolicyRule RuleId='SIS_38' Effect='Deny'><Target><Subjects><Subject>Teacher_38</Subject></Subjects><Resources><Resource>Grades_38</Resource></Resources><Actions><Action>modify</Action></Actions></Target></PolicyRule>"
+    },
+    {
+      "rule_id": "SIS_39",
+      "text_rule": "Permit view access to Grades_39 for role Teacher_39",
+      "xacml_policy": "<PolicyRule RuleId='SIS_39' Effect='Permit'><Target><Subjects><Subject>Teacher_39</Subject></Subjects><Resources><Resource>Grades_39</Resource></Resources><Actions><Action>view</Action></Actions></Target></PolicyRule>"
+    },
+    {
+      "rule_id": "SIS_40",
+      "text_rule": "Deny modify access to Grades_40 for role Teacher_40",
+      "xacml_policy": "<PolicyRule RuleId='SIS_40' Effect='Deny'><Target><Subjects><Subject>Teacher_40</Subject></Subjects><Resources><Resource>Grades_40</Resource></Resources><Actions><Action>modify</Action></Actions></Target></PolicyRule>"
+    }
+  ]
+}

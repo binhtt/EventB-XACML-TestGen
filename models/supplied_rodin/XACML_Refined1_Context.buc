@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.contextFile org.eventb.core.configuration="org.eventb.core.fwd" version="3">
+    <org.eventb.core.extendsContext name="'" org.eventb.core.target="XACML_Context"/>
+    <org.eventb.core.carrierSet name="(" org.eventb.core.identifier="POLICY"/>
+    <org.eventb.core.carrierSet name=")" org.eventb.core.identifier="POLICY_SET"/>
+    <org.eventb.core.carrierSet name="*" org.eventb.core.identifier="COMBINING_ALGORITHM"/>
+    <org.eventb.core.constant name="+" org.eventb.core.identifier="policies"/>
+    <org.eventb.core.constant name="?" org.eventb.core.identifier="policy_set_policies"/>
+    <org.eventb.core.constant name="," org.eventb.core.identifier="policy_target"/>
+    <org.eventb.core.constant name="-" org.eventb.core.identifier="policy_set_target"/>
+    <org.eventb.core.axiom name="/" org.eventb.core.label="axm1" org.eventb.core.predicate="policies ∈ POLICY → ℙ(RULE)"/>
+    <org.eventb.core.axiom name="@" org.eventb.core.label="axm2" org.eventb.core.predicate="policy_set_policies ∈ POLICY_SET → ℙ(POLICY)"/>
+    <org.eventb.core.axiom name="0" org.eventb.core.label="axm3" org.eventb.core.predicate="policy_target ∈ POLICY → ℙ(SUBJECT × RESOURCE × ACTION × ENVIRONMENT)"/>
+    <org.eventb.core.axiom name="1" org.eventb.core.label="axm4" org.eventb.core.predicate="policy_set_target ∈ POLICY_SET → ℙ(SUBJECT × RESOURCE × ACTION × ENVIRONMENT)"/>
+    <org.eventb.core.axiom name="2" org.eventb.core.label="axm5" org.eventb.core.predicate="partition(&#13;&#10;    COMBINING_ALGORITHM,&#13;&#10;    {PermitOverrides},&#13;&#10;    {DenyOverrides},&#13;&#10;    {FirstApplicable}&#13;&#10;)"/>
+    <org.eventb.core.constant name="4" org.eventb.core.identifier="PermitOverrides"/>
+    <org.eventb.core.constant name="5" org.eventb.core.identifier="DenyOverrides"/>
+    <org.eventb.core.constant name="6" org.eventb.core.identifier="FirstApplicable"/>
+    <org.eventb.core.axiom name="7" org.eventb.core.label="axm6" org.eventb.core.predicate="combining_alg_policy ∈ POLICY → COMBINING_ALGORITHM"/>
+    <org.eventb.core.constant name="8" org.eventb.core.identifier="combining_alg_policy"/>
+    <org.eventb.core.constant name="9" org.eventb.core.identifier="combining_alg_policyset"/>
+    <org.eventb.core.axiom name=":" org.eventb.core.label="axm7" org.eventb.core.predicate="combining_alg_policyset ∈ POLICY_SET → COMBINING_ALGORITHM"/>
+    <org.eventb.core.constant name=";" org.eventb.core.identifier="rule_order"/>
+    <org.eventb.core.axiom name="=" org.eventb.core.label="axm8" org.eventb.core.predicate="rule_order ∈ POLICY → (RULE → ℕ)"/>
+    <org.eventb.core.axiom name="&gt;" org.eventb.core.label="axm9" org.eventb.core.predicate="∀pol·pol ∈ POLICY ⇒ (∀r1,r2·r1 ∈ policies(pol) ∧ r2 ∈ policies(pol) ∧ r1 ≠ r2 ⇒ &#13;&#10;rule_order(pol)(r1) ≠ rule_order(pol)(r2))"/>
+</org.eventb.core.contextFile>

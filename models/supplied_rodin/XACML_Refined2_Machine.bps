@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.psFile>
+    <org.eventb.core.psStatus name="inv1/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="28" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="inv2/WD" org.eventb.core.confidence="1000" org.eventb.core.poStamp="29" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="INITIALISATION/inv1/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="28" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="INITIALISATION/inv2/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="30" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="INITIALISATION/inv3/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="30" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="EvaluateRequest/inv1/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="30" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="EvaluateRequest/inv2/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="30" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="EvaluateRequest/inv3/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="30" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="Combine_PermitOverrides_Permit /inv1/INV" org.eventb.core.confidence="0" org.eventb.core.poStamp="30" org.eventb.core.psManual="true"/>
+    <org.eventb.core.psStatus name="Combine_PermitOverrides_Permit /inv2/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="30" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="Combine_PermitOverrides_Permit /inv3/INV" org.eventb.core.confidence="0" org.eventb.core.poStamp="30" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="Combine_PermitOverrides_Deny/inv1/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="30" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="Combine_PermitOverrides_Deny/inv2/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="30" org.eventb.core.psBroken="true" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="Combine_PermitOverrides_Deny/inv3/INV" org.eventb.core.confidence="0" org.eventb.core.poStamp="30" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="Combine_PermitOverrides_NotApplicable/inv1/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="30" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="Combine_PermitOverrides_NotApplicable/inv2/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="30" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="Combine_PermitOverrides_NotApplicable/inv3/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="30" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="Combine_DenyOverrides_Deny/inv1/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="31" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="Combine_DenyOverrides_Deny/inv2/INV" org.eventb.core.confidence="0" org.eventb.core.poStamp="31" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="Combine_DenyOverrides_Deny/inv3/INV" org.eventb.core.confidence="0" org.eventb.core.poStamp="31" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="Combine_DenyOverrides_Permit/inv1/INV" org.eventb.core.confidence="0" org.eventb.core.poStamp="34" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="Combine_DenyOverrides_Permit/inv2/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="34" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="Combine_DenyOverrides_Permit/inv3/INV" org.eventb.core.confidence="0" org.eventb.core.poStamp="34" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="Combine_DenyOverrides_NotApplicable/inv1/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="35" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="Combine_DenyOverrides_NotApplicable/inv2/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="35" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="Combine_DenyOverrides_NotApplicable/inv3/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="35" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="ApplyCombining_FirstApplicable/inv1/INV" org.eventb.core.confidence="0" org.eventb.core.poStamp="36" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="ApplyCombining_FirstApplicable/inv2/INV" org.eventb.core.confidence="0" org.eventb.core.poStamp="36" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="ApplyCombining_FirstApplicable/inv3/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="36" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="Combine_FirstApplicable_NotApplicable/inv1/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="37" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="Combine_FirstApplicable_NotApplicable/inv2/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="37" org.eventb.core.psManual="false"/>
+    <org.eventb.core.psStatus name="Combine_FirstApplicable_NotApplicable/inv3/INV" org.eventb.core.confidence="1000" org.eventb.core.poStamp="37" org.eventb.core.psManual="false"/>
+</org.eventb.core.psFile>

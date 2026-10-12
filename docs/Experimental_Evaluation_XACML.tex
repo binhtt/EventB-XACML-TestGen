@@ -1,0 +1,297 @@
+\section{Experimental Evaluation}
+\label{sec:experimental_evaluation}
+
+We evaluate the implemented test-generation workflow using policy
+fragments from three application domains: healthcare access control,
+financial management, and student information management. The
+experiments examine test generation, agreement between two executable
+representations, and detection of injected policy faults. The current
+prototype reads concrete bindings exported as Event-B contexts; it does
+not execute the original Event-B machine events. Accordingly, the
+results constitute a concrete-data feasibility evaluation rather than
+an end-to-end evaluation from verified models to an independent PDP.
+
+\subsection{Experimental Setup}
+\label{subsec:exp_setup}
+
+\paragraph{Prototype and environment.}
+The prototype is implemented in Python~3.12.14 and runs on Linux
+x86\_64 with kernel~6.18.44 and glibc~2.39. It uses the Python standard
+library, including \texttt{xml.etree.ElementTree} for XML processing.
+The tool parses the supplied rule fragments, constructs concrete
+Event-B bindings, derives finite request domains, selects test requests,
+and exports XACML policy/request XML and expected decisions. Results
+are recorded as CSV and JSON. Experiments are sequential, with fixed
+attribute ordering and deterministic witness selection. No stochastic
+optimization or post-generation suite reduction is applied to the
+three datasets.
+
+Expected decisions are computed by a reference evaluator using bindings
+extracted from the generated context. A separately implemented local
+XML-subset evaluator processes the emitted policies. For HACS and SIS,
+this evaluator compiles equality targets for exhaustive evaluation;
+selected serialized requests are additionally evaluated through an
+uncompiled XML evaluator. These evaluators share the study's semantic
+assumptions. No independent production PDP, XACML schema validation,
+Rodin proof replay, or ProB execution is included in these measurements.
+
+\paragraph{Healthcare Access Control System (HACS).}
+HACS represents authorization requests concerning healthcare-domain
+resources. The supplied dataset contains 50 rule fragments, with 25
+Permit effects and 25 Deny effects. Targets specify a subject, a
+resource, and an action, represented by values such as
+\texttt{Admin\_1}, \texttt{File\_01}, and \texttt{read}.
+The fragments use a simplified \texttt{PolicyRule} representation;
+they are normalized into XACML~3.0 rules whose targets are conjunctions
+of singleton string-equality matches. Policy membership from the
+repository organizes these rules into 20 policies. Because the supplied
+fragments do not declare a combining algorithm, DenyOverrides is used
+as an explicit experimental assumption.
+
+\paragraph{Financial Management System (FMS).}
+FMS represents authorization requests in a financial-management
+setting. The supplied dataset contains 45 Permit rules organized into
+18 policies using DenyOverrides. Fifteen policies contain three rules
+each, while the remaining three policies are empty. A textual target
+such as \texttt{Role1 / Action1} is interpreted as the conjunction
+\texttt{role = Role1} and \texttt{action = Action1}. Empty conditions
+are interpreted as true. The empty policies are retained and evaluated
+as NotApplicable. The generic role/action names provide a structural
+benchmark rather than evidence of a deployed financial policy.
+
+\paragraph{Student Information System (SIS).}
+SIS represents access to student-information resources. Its 40 rule
+fragments contain 20 Permit and 20 Deny effects, with subjects such as
+\texttt{Teacher\_1}, resources such as \texttt{Grades\_01}, and actions
+\texttt{view} and \texttt{modify}. As in HACS, the simplified fragments
+are normalized into equality-based XACML targets. Repository membership
+organizes the rules into 15 policies. DenyOverrides is assumed because
+the supplied fragments do not specify the combining algorithm.
+
+\paragraph{Data provenance and interpretation.}
+The three rule datasets are supplied as JSON. HACS and SIS membership
+metadata is obtained from the XACML2EventB repository at commit
+\texttt{8cc1782f3df3}.\footnote{\url{https://github.com/binhtt/XACML2EventB}}
+Placeholder XML policy strings in the repository are not executed.
+All policy targets are assumed universal; omitted conditions are true.
+Environment values are singleton and do not affect applicability.
+FMS additionally uses an irrelevant singleton resource domain.
+Each policy is tested separately; policy-set aggregation is not
+included. Table~\ref{tab:exp_datasets} summarizes the resulting instances.
+
+\begin{table}[htbp]
+\centering
+\caption{Characteristics of the concretized datasets}
+\label{tab:exp_datasets}
+\small
+\begin{tabular}{lrrrrr}
+\hline
+System & Rules & Policies & Permit & Deny & Empty policies \\
+\hline
+HACS & 50 & 20 & 25 & 25 & 0 \\
+FMS & 45 & 18 & 45 & 0 & 3 \\
+SIS & 40 & 15 & 20 & 20 & 0 \\
+\hline
+Total & 135 & 53 & 90 & 45 & 3 \\
+\hline
+\end{tabular}
+\end{table}
+
+\subsection{Test Configuration and Evaluation Criteria}
+\label{subsec:exp_configuration}
+
+\paragraph{Concrete bindings and request domains.}
+The prototype exports concrete definitions of rule targets, conditions,
+effects, policy membership, and rule ordering into an Event-B context.
+A restricted parser reads these generated formulas back and checks
+correspondence with the input data. This parser supports the emitted
+binding subset, not arbitrary Event-B expressions. The new contexts
+have not been type-checked or proved in Rodin, and original machine
+guards and actions are not interpreted by the current generator.
+
+Each attribute domain contains the values appearing in the dataset
+and one additional unmatched value. FMS uses 46 role values and 46
+action values, producing $46\times46=2,116$ requests per policy.
+HACS uses 51 subject values, 51 resource values, and five action values,
+producing $51\times51\times5=13,005$ requests. SIS uses 41 subject
+values, 41 resource values, and three action values, producing
+$41\times41\times3=5,043$ requests. Requests contain all relevant
+attributes, each with a single string value.
+
+\paragraph{Test objectives and selection.}
+The generator constructs objectives for applicable and non-applicable
+outcomes of each rule and for feasible Permit, Deny, and NotApplicable
+policy decisions. Complete enumeration identifies feasible objectives
+within the configured domain. Objectives are processed in a fixed
+order. If the selected suite does not already satisfy an objective,
+the generator adds the first satisfying request in the configured
+ordering. The resulting test contains a policy identifier, a request,
+and its expected decision. Coverage is computed over feasible
+rule-applicability and decision objectives; it is not Event-B event
+coverage, MC/DC, or coverage of combining interactions.
+
+\paragraph{Mutation protocol.}
+Mutation analysis applies single-site edits to the emitted policy XML
+while preserving the reference bindings and oracle decisions. All
+three datasets use effect replacement, rule removal, and subject/role
+value replacement. HACS and SIS additionally use resource-value and
+action-value replacements. Value replacements use the corresponding
+unmatched domain value. Effect replacement exchanges Permit and Deny.
+Two combining mutants per policy replace DenyOverrides with
+PermitOverrides and FirstApplicable, respectively.
+
+A mutant is detected when a selected test produces a decision different
+from the unchanged reference decision. Each mutant is also evaluated
+on the complete finite request domain to identify domain-equivalent
+variants. Mutation counts refer to generated operator instances;
+behaviorally duplicate instances are not deduplicated.
+
+\paragraph{Evaluation criteria.}
+We report policy-specific test evaluations, distinct request values,
+coverage, internal decision agreement, and mutation detection.
+A request reused against different policies counts once per policy
+in test evaluations. The raw mutation score includes all generated
+mutants. The adjusted score excludes only mutants shown equivalent
+on the declared finite domain; no global equivalence claim is made.
+
+\subsection{Test-Generation and Decision-Agreement Results}
+\label{subsec:exp_generation_results}
+
+Table~\ref{tab:exp_tests} summarizes generation and reference checks.
+The prototype selects 70 HACS, 63 FMS, and 55 SIS tests, for a total
+of 188 policy-specific evaluations. These suites contain 51, 46,
+and 41 distinct request values, respectively. All feasible
+rule-applicability and policy-decision objectives are covered.
+
+\begin{table}[htbp]
+\centering
+\caption{Test generation and internal reference agreement}
+\label{tab:exp_tests}
+\small
+\begin{tabular}{lrrrr}
+\hline
+System & Tests & Distinct requests & Reference checks & Mismatches \\
+\hline
+HACS & 70 & 51 & 260,100 & 0 \\
+FMS & 63 & 46 & 38,088 & 0 \\
+SIS & 55 & 41 & 75,645 & 0 \\
+\hline
+Total & 188 & -- & 373,833 & 0 \\
+\hline
+\end{tabular}
+\end{table}
+
+Each nonempty policy requires one positive request per rule and an
+additional request for the non-applicable case. The three empty FMS
+policies each require one request. The extracted-binding and XML-subset
+evaluators agree on all 373,833 policy/request combinations in the
+configured domains. This agreement supports consistency of the
+implemented representations under the recorded assumptions; it does
+not establish correctness against an independent PDP or the complete
+XACML specification.
+
+\subsection{Fault-Detection Results}
+\label{subsec:exp_fault_detection}
+
+Table~\ref{tab:exp_mutants} reports mutation outcomes. The suites
+detect 250 of 290 HACS mutants, 135 of 171 FMS mutants, and 200 of
+230 SIS mutants. Their raw mutation scores are 86.21\%, 78.95\%,
+and 86.96\%, respectively. The pooled score is $585/691=84.66\%$.
+
+\begin{table}[htbp]
+\centering
+\caption{Mutation outcomes on the finite request domains}
+\label{tab:exp_mutants}
+\small
+\begin{tabular}{lrrrr}
+\hline
+System & Mutants & Detected & Domain-equivalent & Raw score \\
+\hline
+HACS & 290 & 250 & 40 & 86.21\% \\
+FMS & 171 & 135 & 36 & 78.95\% \\
+SIS & 230 & 200 & 30 & 86.96\% \\
+\hline
+Total & 691 & 585 & 106 & 84.66\% \\
+\hline
+\end{tabular}
+\end{table}
+
+All evaluated effect, rule-removal, and attribute-value mutants are
+detected (Table~\ref{tab:exp_operators}). Positive requests provide
+direct witnesses: changing an applicable rule's effect changes its
+expected decision, while removing the rule or changing one of its
+target values makes the original request non-applicable.
+
+\begin{table}[htbp]
+\centering
+\caption{Detected/generated mutants by operator family}
+\label{tab:exp_operators}
+\small
+\begin{tabular}{lrrr}
+\hline
+Operator & HACS & FMS & SIS \\
+\hline
+Effect replacement & 50/50 & 45/45 & 40/40 \\
+Rule removal & 50/50 & 45/45 & 40/40 \\
+Subject/role replacement & 50/50 & 45/45 & 40/40 \\
+Resource replacement & 50/50 & -- & 40/40 \\
+Action replacement & 50/50 & -- & 40/40 \\
+Combining-algorithm replacement & 0/40 & 0/36 & 0/30 \\
+\hline
+\end{tabular}
+\end{table}
+
+For example, HACS\_POLICY\_1 contains a Permit rule matching
+$(\texttt{Admin\_1},\texttt{File\_01},\texttt{read})$.
+This request is included in the generated suite. Replacing the rule's
+effect with Deny changes the decision to Deny, whereas removing the
+rule changes it to NotApplicable. Both outcomes differ from the
+reference Permit decision.
+
+None of the 106 combining-algorithm mutants is detected. Exhaustive
+checks establish their equivalence within the configured domains.
+The targets in each dataset are mutually exclusive, so no request
+activates multiple rules of a policy. In addition, FMS contains only
+Permit effects. Although HACS and SIS include both effects, those
+effects do not interact in a single evaluation. Excluding the
+domain-equivalent mutants yields an adjusted score of 100\% for
+each dataset. This score concerns the evaluated rule-level mutations
+and should not be interpreted as general combining-fault detection.
+
+\subsection{Discussion and Threats to Validity}
+\label{subsec:exp_threats}
+
+\paragraph{Model and oracle validity.}
+Concrete bindings are generated and read back, but the original
+Event-B event semantics are not executed. The new contexts have not
+been proved in Rodin. The uploaded historical project also contains
+confidence-zero and broken proof-status entries; its proofs were not
+replayed. Agreement between local evaluators may conceal shared
+interpretation errors. Schema validation and an independent PDP are
+required before claiming standard-compliant executable requests or
+end-to-end testing from verified specifications.
+
+\paragraph{Dataset validity.}
+The rule fragments are simplified, and HACS/SIS combining algorithms
+and universal policy targets are assumed. Generic attribute names,
+mutually exclusive targets, missing nontrivial conditions, and empty
+FMS policies limit representativeness. No overlapping Permit/Deny
+rules, Indeterminate outcomes, missing attributes, multivalued bags,
+or root-policy-set aggregation are evaluated.
+
+\paragraph{Mutation and comparative validity.}
+The injected mutants are controlled operator instances rather than
+naturally occurring defects. Domain equivalence does not imply
+unrestricted semantic equivalence. The datasets make several mutations
+straightforward to detect, and no alternative generator comparison,
+ablation, or repeated timing study is included in these three-system
+measurements. The results support feasibility and observed detection,
+not comparative superiority or general correctness.
+
+\paragraph{Reproducibility.}
+The artifact includes input fragments, membership metadata, file hashes,
+concrete context candidates, parser and evaluator sources, generated
+policy/request XML, expected decisions, and per-policy CSV results.
+Fixed domain and objective ordering support deterministic reproduction.
+Historical Rodin proof-status records are kept separate from the
+new test-generation and mutation measurements.

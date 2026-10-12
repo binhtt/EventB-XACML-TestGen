@@ -1,0 +1,6 @@
+component,stored_status_entries,confidence_1000,confidence_0,broken,manual_flag
+XACML_AbsMachine,4,4,0,0,0
+XACML_Context,0,0,0,0,0
+XACML_Refined1_Context,1,1,0,0,0
+XACML_Refined1_Machine,30,22,8,0,1
+XACML_Refined2_Machine,32,23,9,1,1

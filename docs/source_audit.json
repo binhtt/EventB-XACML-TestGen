@@ -1,0 +1,48 @@
+{
+  "repo": "https://github.com/binhtt/XACML2EventB",
+  "commit": "8cc1782f3df354cd80552a0f4499482a3ce6bbd5",
+  "files": [
+    {
+      "path": "examples/FMS/FMS_45rules_18policies.json",
+      "sha256": "9f763b72c810197bd98cb2aa255d1a4f7e0a1a1f857484010ae48aa4115100ce",
+      "xml_strings": 45,
+      "ellipsis_xml_strings": 0,
+      "plain_target_xml_strings": 45
+    },
+    {
+      "path": "examples/FMS/FMS_Txt2Xacml_rules.json",
+      "sha256": "93ac448e9e905368ba4f2a3c69a6f4dcc53e3156c8d222c00afd7e124ca97d4b",
+      "xml_strings": 45,
+      "ellipsis_xml_strings": 0,
+      "plain_target_xml_strings": 45
+    },
+    {
+      "path": "examples/HAS/HACS_Txt2Xacml_rules.json",
+      "sha256": "75ff186d67a177eaddd364a71d529eed00eeb31238ccc5382130f0a5768ae1aa",
+      "xml_strings": 50,
+      "ellipsis_xml_strings": 0,
+      "plain_target_xml_strings": 0
+    },
+    {
+      "path": "examples/HAS/HACS_XACML_policies.json",
+      "sha256": "dac67755f5339b274ac96ac91ae093a76b7e2df0e6df5ddbbdb6185ca33c5c53",
+      "xml_strings": 20,
+      "ellipsis_xml_strings": 20,
+      "plain_target_xml_strings": 0
+    },
+    {
+      "path": "examples/SIS/SIS_Txt2Xacml_rules.json",
+      "sha256": "4d325d1cd97b4a69147df035917544a43b4aeca7319263efc6be83ee61494267",
+      "xml_strings": 40,
+      "ellipsis_xml_strings": 0,
+      "plain_target_xml_strings": 0
+    },
+    {
+      "path": "examples/SIS/SIS_XACML_policies.json",
+      "sha256": "d4b4e598276bcb6537ec2af652c7eebdcd22b854a7a0c6979278986654730568",
+      "xml_strings": 15,
+      "ellipsis_xml_strings": 15,
+      "plain_target_xml_strings": 0
+    }
+  ]
+}

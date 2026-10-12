@@ -1,0 +1,381 @@
+{
+  "FMS_rules": [
+    {
+      "rule_id": "R1",
+      "text_rule": "Example rule text 1",
+      "xacml_policy": "<Rule RuleId='R1' Effect='Permit'><Target>Role1 / Action1</Target><Condition></Condition></Rule>"
+    },
+    {
+      "rule_id": "R2",
+      "text_rule": "Example rule text 2",
+      "xacml_policy": "<Rule RuleId='R2' Effect='Permit'><Target>Role2 / Action2</Target><Condition></Condition></Rule>"
+    },
+    {
+      "rule_id": "R3",
+      "text_rule": "Example rule text 3",
+      "xacml_policy": "<Rule RuleId='R3' Effect='Permit'><Target>Role3 / Action3</Target><Condition></Condition></Rule>"
+    },
+    {
+      "rule_id": "R4",
+      "text_rule": "Example rule text 4",
+      "xacml_policy": "<Rule RuleId='R4' Effect='Permit'><Target>Role4 / Action4</Target><Condition></Condition></Rule>"
+    },
+    {
+      "rule_id": "R5",
+      "text_rule": "Example rule text 5",
+      "xacml_policy": "<Rule RuleId='R5' Effect='Permit'><Target>Role5 / Action5</Target><Condition></Condition></Rule>"
+    },
+    {
+      "rule_id": "R6",
+      "text_rule": "Example rule text 6",
+      "xacml_policy": "<Rule RuleId='R6' Effect='Permit'><Target>Role6 / Action6</Target><Condition></Condition></Rule>"
+    },
+    {
+      "rule_id": "R7",
+      "text_rule": "Example rule text 7",
+      "xacml_policy": "<Rule RuleId='R7' Effect='Permit'><Target>Role7 / Action7</Target><Condition></Condition></Rule>"
+    },
+    {
+      "rule_id": "R8",
+      "text_rule": "Example rule text 8",
+      "xacml_policy": "<Rule RuleId='R8' Effect='Permit'><Target>Role8 / Action8</Target><Condition></Condition></Rule>"
+    },
+    {
+      "rule_id": "R9",
+      "text_rule": "Example rule text 9",
+      "xacml_policy": "<Rule RuleId='R9' Effect='Permit'><Target>Role9 / Action9</Target><Condition></Condition></Rule>"
+    },
+    {
+      "rule_id": "R10",
+      "text_rule": "Example rule text 10",
+      "xacml_policy": "<Rule RuleId='R10' Effect='Permit'><Target>Role10 / Action10</Target><Condition></Condition></Rule>"
+    },
+    {
+      "rule_id": "R11",
+      "text_rule": "Example rule text 11",
+      "xacml_policy": "<Rule RuleId='R11' Effect='Permit'><Target>Role11 / Action11</Target><Condition></Condition></Rule>"
+    },
+    {
+      "rule_id": "R12",
+      "text_rule": "Example rule text 12",
+      "xacml_policy": "<Rule RuleId='R12' Effect='Permit'><Target>Role12 / Action12</Target><Condition></Condition></Rule>"
+    },
+    {
+      "rule_id": "R13",
+      "text_rule": "Example rule text 13",
+      "xacml_policy": "<Rule RuleId='R13' Effect='Permit'><Target>Role13 / Action13</Target><Condition></Condition></Rule>"
+    },
+    {
+      "rule_id": "R14",
+      "text_rule": "Example rule text 14",
+      "xacml_policy": "<Rule RuleId='R14' Effect='Permit'><Target>Role14 / Action14</Target><Condition></Condition></Rule>"
+    },
+    {
+      "rule_id": "R15",
+      "text_rule": "Example rule text 15",
+      "xacml_policy": "<Rule RuleId='R15' Effect='Permit'><Target>Role15 / Action15</Target><Condition></Condition></Rule>"
+    },
+    {
+      "rule_id": "R16",
+      "text_rule": "Example rule text 16",
+      "xacml_policy": "<Rule RuleId='R16' Effect='Permit'><Target>Role16 / Action16</Target><Condition></Condition></Rule>"
+    },
+    {
+      "rule_id": "R17",
+      "text_rule": "Example rule text 17",
+      "xacml_policy": "<Rule RuleId='R17' Effect='Permit'><Target>Role17 / Action17</Target><Condition></Condition></Rule>"
+    },
+    {
+      "rule_id": "R18",
+      "text_rule": "Example rule text 18",
+      "xacml_policy": "<Rule RuleId='R18' Effect='Permit'><Target>Role18 / Action18</Target><Condition></Condition></Rule>"
+    },
+    {
+      "rule_id": "R19",
+      "text_rule": "Example rule text 19",
+      "xacml_policy": "<Rule RuleId='R19' Effect='Permit'><Target>Role19 / Action19</Target><Condition></Condition></Rule>"
+    },
+    {
+      "rule_id": "R20",
+      "text_rule": "Example rule text 20",
+      "xacml_policy": "<Rule RuleId='R20' Effect='Permit'><Target>Role20 / Action20</Target><Condition></Condition></Rule>"
+    },
+    {
+      "rule_id": "R21",
+      "text_rule": "Example rule text 21",
+      "xacml_policy": "<Rule RuleId='R21' Effect='Permit'><Target>Role21 / Action21</Target><Condition></Condition></Rule>"
+    },
+    {
+      "rule_id": "R22",
+      "text_rule": "Example rule text 22",
+      "xacml_policy": "<Rule RuleId='R22' Effect='Permit'><Target>Role22 / Action22</Target><Condition></Condition></Rule>"
+    },
+    {
+      "rule_id": "R23",
+      "text_rule": "Example rule text 23",
+      "xacml_policy": "<Rule RuleId='R23' Effect='Permit'><Target>Role23 / Action23</Target><Condition></Condition></Rule>"
+    },
+    {
+      "rule_id": "R24",
+      "text_rule": "Example rule text 24",
+      "xacml_policy": "<Rule RuleId='R24' Effect='Permit'><Target>Role24 / Action24</Target><Condition></Condition></Rule>"
+    },
+    {
+      "rule_id": "R25",
+      "text_rule": "Example rule text 25",
+      "xacml_policy": "<Rule RuleId='R25' Effect='Permit'><Target>Role25 / Action25</Target><Condition></Condition></Rule>"
+    },
+    {
+      "rule_id": "R26",
+      "text_rule": "Example rule text 26",
+      "xacml_policy": "<Rule RuleId='R26' Effect='Permit'><Target>Role26 / Action26</Target><Condition></Condition></Rule>"
+    },
+    {
+      "rule_id": "R27",
+      "text_rule": "Example rule text 27",
+      "xacml_policy": "<Rule RuleId='R27' Effect='Permit'><Target>Role27 / Action27</Target><Condition></Condition></Rule>"
+    },
+    {
+      "rule_id": "R28",
+      "text_rule": "Example rule text 28",
+      "xacml_policy": "<Rule RuleId='R28' Effect='Permit'><Target>Role28 / Action28</Target><Condition></Condition></Rule>"
+    },
+    {
+      "rule_id": "R29",
+      "text_rule": "Example rule text 29",
+      "xacml_policy": "<Rule RuleId='R29' Effect='Permit'><Target>Role29 / Action29</Target><Condition></Condition></Rule>"
+    },
+    {
+      "rule_id": "R30",
+      "text_rule": "Example rule text 30",
+      "xacml_policy": "<Rule RuleId='R30' Effect='Permit'><Target>Role30 / Action30</Target><Condition></Condition></Rule>"
+    },
+    {
+      "rule_id": "R31",
+      "text_rule": "Example rule text 31",
+      "xacml_policy": "<Rule RuleId='R31' Effect='Permit'><Target>Role31 / Action31</Target><Condition></Condition></Rule>"
+    },
+    {
+      "rule_id": "R32",
+      "text_rule": "Example rule text 32",
+      "xacml_policy": "<Rule RuleId='R32' Effect='Permit'><Target>Role32 / Action32</Target><Condition></Condition></Rule>"
+    },
+    {
+      "rule_id": "R33",
+      "text_rule": "Example rule text 33",
+      "xacml_policy": "<Rule RuleId='R33' Effect='Permit'><Target>Role33 / Action33</Target><Condition></Condition></Rule>"
+    },
+    {
+      "rule_id": "R34",
+      "text_rule": "Example rule text 34",
+      "xacml_policy": "<Rule RuleId='R34' Effect='Permit'><Target>Role34 / Action34</Target><Condition></Condition></Rule>"
+    },
+    {
+      "rule_id": "R35",
+      "text_rule": "Example rule text 35",
+      "xacml_policy": "<Rule RuleId='R35' Effect='Permit'><Target>Role35 / Action35</Target><Condition></Condition></Rule>"
+    },
+    {
+      "rule_id": "R36",
+      "text_rule": "Example rule text 36",
+      "xacml_policy": "<Rule RuleId='R36' Effect='Permit'><Target>Role36 / Action36</Target><Condition></Condition></Rule>"
+    },
+    {
+      "rule_id": "R37",
+      "text_rule": "Example rule text 37",
+      "xacml_policy": "<Rule RuleId='R37' Effect='Permit'><Target>Role37 / Action37</Target><Condition></Condition></Rule>"
+    },
+    {
+      "rule_id": "R38",
+      "text_rule": "Example rule text 38",
+      "xacml_policy": "<Rule RuleId='R38' Effect='Permit'><Target>Role38 / Action38</Target><Condition></Condition></Rule>"
+    },
+    {
+      "rule_id": "R39",
+      "text_rule": "Example rule text 39",
+      "xacml_policy": "<Rule RuleId='R39' Effect='Permit'><Target>Role39 / Action39</Target><Condition></Condition></Rule>"
+    },
+    {
+      "rule_id": "R40",
+      "text_rule": "Example rule text 40",
+      "xacml_policy": "<Rule RuleId='R40' Effect='Permit'><Target>Role40 / Action40</Target><Condition></Condition></Rule>"
+    },
+    {
+      "rule_id": "R41",
+      "text_rule": "Example rule text 41",
+      "xacml_policy": "<Rule RuleId='R41' Effect='Permit'><Target>Role41 / Action41</Target><Condition></Condition></Rule>"
+    },
+    {
+      "rule_id": "R42",
+      "text_rule": "Example rule text 42",
+      "xacml_policy": "<Rule RuleId='R42' Effect='Permit'><Target>Role42 / Action42</Target><Condition></Condition></Rule>"
+    },
+    {
+      "rule_id": "R43",
+      "text_rule": "Example rule text 43",
+      "xacml_policy": "<Rule RuleId='R43' Effect='Permit'><Target>Role43 / Action43</Target><Condition></Condition></Rule>"
+    },
+    {
+      "rule_id": "R44",
+      "text_rule": "Example rule text 44",
+      "xacml_policy": "<Rule RuleId='R44' Effect='Permit'><Target>Role44 / Action44</Target><Condition></Condition></Rule>"
+    },
+    {
+      "rule_id": "R45",
+      "text_rule": "Example rule text 45",
+      "xacml_policy": "<Rule RuleId='R45' Effect='Permit'><Target>Role45 / Action45</Target><Condition></Condition></Rule>"
+    }
+  ],
+  "FMS_policies": [
+    {
+      "policy_id": "P1",
+      "rules_included": [
+        "R1",
+        "R2",
+        "R3"
+      ],
+      "combining_alg": "deny-overrides"
+    },
+    {
+      "policy_id": "P2",
+      "rules_included": [
+        "R4",
+        "R5",
+        "R6"
+      ],
+      "combining_alg": "deny-overrides"
+    },
+    {
+      "policy_id": "P3",
+      "rules_included": [
+        "R7",
+        "R8",
+        "R9"
+      ],
+      "combining_alg": "deny-overrides"
+    },
+    {
+      "policy_id": "P4",
+      "rules_included": [
+        "R10",
+        "R11",
+        "R12"
+      ],
+      "combining_alg": "deny-overrides"
+    },
+    {
+      "policy_id": "P5",
+      "rules_included": [
+        "R13",
+        "R14",
+        "R15"
+      ],
+      "combining_alg": "deny-overrides"
+    },
+    {
+      "policy_id": "P6",
+      "rules_included": [
+        "R16",
+        "R17",
+        "R18"
+      ],
+      "combining_alg": "deny-overrides"
+    },
+    {
+      "policy_id": "P7",
+      "rules_included": [
+        "R19",
+        "R20",
+        "R21"
+      ],
+      "combining_alg": "deny-overrides"
+    },
+    {
+      "policy_id": "P8",
+      "rules_included": [
+        "R22",
+        "R23",
+        "R24"
+      ],
+      "combining_alg": "deny-overrides"
+    },
+    {
+      "policy_id": "P9",
+      "rules_included": [
+        "R25",
+        "R26",
+        "R27"
+      ],
+      "combining_alg": "deny-overrides"
+    },
+    {
+      "policy_id": "P10",
+      "rules_included": [
+        "R28",
+        "R29",
+        "R30"
+      ],
+      "combining_alg": "deny-overrides"
+    },
+    {
+      "policy_id": "P11",
+      "rules_included": [
+        "R31",
+        "R32",
+        "R33"
+      ],
+      "combining_alg": "deny-overrides"
+    },
+    {
+      "policy_id": "P12",
+      "rules_included": [
+        "R34",
+        "R35",
+        "R36"
+      ],
+      "combining_alg": "deny-overrides"
+    },
+    {
+      "policy_id": "P13",
+      "rules_included": [
+        "R37",
+        "R38",
+        "R39"
+      ],
+      "combining_alg": "deny-overrides"
+    },
+    {
+      "policy_id": "P14",
+      "rules_included": [
+        "R40",
+        "R41",
+        "R42"
+      ],
+      "combining_alg": "deny-overrides"
+    },
+    {
+      "policy_id": "P15",
+      "rules_included": [
+        "R43",
+        "R44",
+        "R45"
+      ],
+      "combining_alg": "deny-overrides"
+    },
+    {
+      "policy_id": "P16",
+      "rules_included": [],
+      "combining_alg": "deny-overrides"
+    },
+    {
+      "policy_id": "P17",
+      "rules_included": [],
+      "combining_alg": "deny-overrides"
+    },
+    {
+      "policy_id": "P18",
+      "rules_included": [],
+      "combining_alg": "deny-overrides"
+    }
+  ]
+}
